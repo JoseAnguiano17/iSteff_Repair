@@ -10,7 +10,9 @@ namespace iS_Repair.Clases.DataBase
 {
     public class DB
     {
-        TableBuilder clientes = new TableBuilder("clientes","");
+        TableBuilder clientes = new TableBuilder("clientes","id_cliente VARCHAR(8)," +
+                                                            "nombre TEXT," +
+                                                            "n_telefono VARCHAR(14)");
         TableBuilder recibidos = new TableBuilder("recibidos", "");
         TableBuilder telefonos = new TableBuilder("telefonos", "");
         TableBuilder problemas = new TableBuilder("problemas", "");
