@@ -68,6 +68,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ClasesTablas\Cliente.cs" />
+    <Compile Include="Clases\ClasesTablas\Historial.cs" />
+    <Compile Include="Clases\ClasesTablas\Pedido.cs" />
+    <Compile Include="Clases\ClasesTablas\Pendiente.cs" />
+    <Compile Include="Clases\ClasesTablas\Problema.cs" />
+    <Compile Include="Clases\ClasesTablas\Recibido.cs" />
+    <Compile Include="Clases\ClasesTablas\Telefono.cs" />
     <Compile Include="Clases\DataBase\DataHost.cs" />
     <Compile Include="Clases\DataBase\DB.cs" />
     <Compile Include="Clases\DataBase\TableBuilder.cs" />
