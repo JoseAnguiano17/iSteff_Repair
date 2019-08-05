@@ -1,24 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace iS_Repair.Clases.DataBase
 {
     public class DB
     {
-        TableBuilder clientes = new TableBuilder("clientes","");
-        TableBuilder recibidos = new TableBuilder("recibidos", "");
-        TableBuilder telefonos = new TableBuilder("telefonos", "");
-        TableBuilder problemas = new TableBuilder("problemas", "");
-        TableBuilder historial = new TableBuilder("historial", "");
-        TableBuilder pendientes = new TableBuilder("pendientes", "");
-        TableBuilder pedidos = new TableBuilder("pedidos", "");
+        TableBuilder clientes = new TableBuilder("clientes","id_cliente VARCHAR(8)," +
+                                                            "nombre TEXT," +
+                                                            "n_telefono VARCHAR(14)");
+        TableBuilder recibidos = new TableBuilder("recibidos", "id_cliente VARCHAR(8)," +
+                                                               "id_telefono VARCHAR(10)");
+        TableBuilder telefonos = new TableBuilder("telefonos", "id_telefono VARCHAR(10)," +
+                                                               "modelo VARCHAR(40)," +
+                                                               "descripcion TEXT," +
+                                                               "fecha_llegada DATETIME," +
+                                                               "id_problema VARCHAR(14)," +
+                                                               "armado BOOLEAN," +
+                                                               "imei VARCHAR(15)," +
+                                                               "contrasena VARCHAR(40)");
+        TableBuilder problemas = new TableBuilder("problemas", "id_problema VARCHAR(14)," +
+                                                               "nombre VARCHAR(40)," +
+                                                               "costo DOUBLE," +
+                                                               "id_estado VARCHAR(5)," +
+                                                               "fecha_solucion DATETIME");
+        TableBuilder historial = new TableBuilder("historial", "id_telefono VARCHAR(10)," +
+                                                               "id_problema VARCHAR(14)");
+        TableBuilder pendientes = new TableBuilder("pendientes", "id_pendientes varchar(8)," +
+                                                                 "descripcion TEXT," +
+                                                                 "fecha_registro DATETIME");
+        TableBuilder pedidos = new TableBuilder("pedidos", "id_cliente VARCHAR(8)," +
+                                                           "pieza VARCHAR(40)," +
+                                                           "costo DOUBLE," +
+                                                           "pedido BOOLEAN," +
+                                                           "fecha_pedido DATETIME," +
+                                                           "fecha_registro DATETIME");
 
-        SqlConnection miConexion;
+        MySqlConnection miConexion;
         bool blConexionEstablecida = false;
         DataHost dh;
         
@@ -26,7 +42,7 @@ namespace iS_Repair.Clases.DataBase
         {
             string connectionString = @"server=" + dh.Server + ";" + "database=" +
                 dh.Database + ";" + "uid=" + dh.UID + ";" + "pwd=" + password + ";";
-            this.miConexion = new SqlConnection(connectionString);
+            this.miConexion = new MySqlConnection(connectionString);
             Abrir();
             if (!(miConexion.State == ConnectionState.Open))
             {
@@ -36,7 +52,14 @@ namespace iS_Repair.Clases.DataBase
             /**
              * Creacion de tablas.
              **/
-             Cerrar();
+            Executar(clientes.QueryTable());
+            Executar(recibidos.QueryTable());
+            Executar(telefonos.QueryTable());
+            Executar(problemas.QueryTable());
+            Executar(historial.QueryTable());
+            Executar(pendientes.QueryTable());
+            Executar(pedidos.QueryTable());
+            Cerrar();
         }
         public void Abrir()
         {
@@ -59,6 +82,13 @@ namespace iS_Repair.Clases.DataBase
         public bool ConexionEstablecida()
         {
             return blConexionEstablecida;
+        }
+
+        //Executa Querys solo si la conexion esta abierta.
+        void Executar(string query)
+        {
+            MySqlCommand cmd = new MySqlCommand(query,miConexion);
+            cmd.ExecuteNonQuery();
         }
     }
 }
