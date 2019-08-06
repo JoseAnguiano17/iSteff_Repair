@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iS_Repair.Clases
 {
-    class Cliente
+    public class Cliente
     {
         private string _strID;
 

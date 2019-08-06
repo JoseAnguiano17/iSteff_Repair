@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iS_Repair.Clases.ClasesTablas
 {
-    class Telefono
+    public class Telefono
     {
         private string _strIdTelefono;
 
