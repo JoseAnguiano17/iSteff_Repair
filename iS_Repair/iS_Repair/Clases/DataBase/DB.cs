@@ -1,4 +1,4 @@
-﻿using iS_Repair.Clases.ClasesTablas;
+using iS_Repair.Clases.ClasesTablas;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
