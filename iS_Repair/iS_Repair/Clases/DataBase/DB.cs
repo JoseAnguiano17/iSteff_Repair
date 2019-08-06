@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 namespace iS_Repair.Clases.DataBase
 {
@@ -89,6 +90,28 @@ namespace iS_Repair.Clases.DataBase
         {
             MySqlCommand cmd = new MySqlCommand(query,miConexion);
             cmd.ExecuteNonQuery();
+        }
+
+        public IEnumerable<Cliente> Clientes()
+        {
+            Abrir();
+            MySqlCommand cmd = new MySqlCommand(clientes.QuerySelect("*"), miConexion);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable tabla = new DataTable();
+            adapter.Fill(tabla);
+            adapter.Dispose();
+            Cerrar();
+
+            foreach (DataRow item in tabla.Rows)
+            {
+                Cliente cliente = new Cliente();
+                cliente.ID = item[0].ToString();
+                cliente.Nombre = item[1].ToString();
+                cliente.NumeroTelefono= item[2].ToString();
+                yield return cliente;
+            }
+            yield break;
         }
     }
 }

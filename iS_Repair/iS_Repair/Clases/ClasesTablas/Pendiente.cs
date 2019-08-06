@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iS_Repair.Clases.ClasesTablas
 {
-    class Pendiente
+    public class Pendiente
     {
         private string _strId;
 

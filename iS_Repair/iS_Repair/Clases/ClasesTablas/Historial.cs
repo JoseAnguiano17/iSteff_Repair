@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iS_Repair.Clases.ClasesTablas
 {
-    class Historial
+    public class Historial
     {
         private string _strIdTelefono;
 
