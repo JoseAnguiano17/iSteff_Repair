@@ -42,11 +42,7 @@ namespace iS_Repair.Clases.DataBase
         private string _strPassword;
 
         public string Password {
-            set {
-                if (value == "")
-                    throw new Exception("The password field is empty.");
-                else
-                    _strPassword = TextManager.Encriptar(value); }
+            set { _strPassword = TextManager.Encriptar(value); }
         }
 
         public DataHost(string strServer, string strDatabase, string strUID, string strPassword)
@@ -57,6 +53,10 @@ namespace iS_Repair.Clases.DataBase
             Password = strPassword;
         }
 
+        public Boolean isPassword(string password)
+        {
+            return TextManager.DesEncriptar(_strPassword).Equals(password);
+        }
         public DB getDataBase()
         {
             return new DB(this,TextManager.DesEncriptar(_strPassword));

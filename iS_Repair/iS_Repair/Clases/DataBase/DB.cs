@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 namespace iS_Repair.Clases.DataBase
 {
@@ -36,7 +37,6 @@ namespace iS_Repair.Clases.DataBase
 
         MySqlConnection miConexion;
         bool blConexionEstablecida = false;
-        DataHost dh;
         
         public DB(DataHost dh, string password)
         {
@@ -46,7 +46,7 @@ namespace iS_Repair.Clases.DataBase
             Abrir();
             if (!(miConexion.State == ConnectionState.Open))
             {
-                return;
+                throw new Exception("No se pudo conectar a la base de datos.");
             }
             blConexionEstablecida = true;
             /**

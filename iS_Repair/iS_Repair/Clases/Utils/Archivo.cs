@@ -11,6 +11,9 @@ namespace iS_Repair.Clases.Utils
 {
     public class Archivo<Tipo> where Tipo : IEquatable<Tipo>
     {
+        static string appName = "iSteff_Repair";
+        static string folder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + appName;
+        string path = folder;
         private string _strNombreArchivo;
 
         public string NombreArchivo {
@@ -33,12 +36,17 @@ namespace iS_Repair.Clases.Utils
         public Archivo(string strNombreArchivo)
         {
             NombreArchivo = strNombreArchivo;
+            path = folder + "\\" + NombreArchivo;
         }
 
         // Metodo para crear el archivo
         private void Crear()
         {
-            flujo = new FileStream(NombreArchivo, FileMode.Create);
+            if(!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+            flujo = new FileStream(path, FileMode.Create);
             seriador = new BinaryFormatter();
         }
         // Metodo para cerrar el archivo
@@ -57,9 +65,9 @@ namespace iS_Repair.Clases.Utils
         // Metodo para abrir el archivo en modo escritura
         private void AbrirEnModoEscritura()
         {
-            if (File.Exists(NombreArchivo))
+            if (File.Exists(path))
             {
-                flujo = new FileStream(NombreArchivo, FileMode.Append);
+                flujo = new FileStream(path, FileMode.Append);
                 seriador = new BinaryFormatter();
             }
             else
@@ -69,9 +77,9 @@ namespace iS_Repair.Clases.Utils
         // Metodo para abrir en modo lectura
         private void AbrirEnModoLectura()
         {
-            if (File.Exists(NombreArchivo))
+            if (File.Exists(path))
             {
-                flujo = new FileStream(NombreArchivo, FileMode.Open);
+                flujo = new FileStream(path, FileMode.Open);
                 seriador = new BinaryFormatter();
             }
             else
@@ -128,7 +136,7 @@ namespace iS_Repair.Clases.Utils
         {
             try
             {
-                Archivo<Tipo> aux = new Archivo<Tipo>(NombreArchivo + "aux");
+                Archivo<Tipo> aux = new Archivo<Tipo>(path + "aux");
                 foreach (Tipo item in LeerObjetos())
                 {
                     if (!item.Equals(miObjeto))
@@ -139,7 +147,7 @@ namespace iS_Repair.Clases.Utils
                 this.EliminarAchivo();
                 if (File.Exists(aux.NombreArchivo))
                 {
-                    File.Copy(aux.NombreArchivo, NombreArchivo, true);
+                    File.Copy(aux.NombreArchivo, path, true);
                     aux.EliminarAchivo();
                 }
             }
@@ -151,7 +159,7 @@ namespace iS_Repair.Clases.Utils
 
         public void EliminarAchivo()
         {
-            File.Delete(NombreArchivo);
+            File.Delete(path);
         }
     }
 }

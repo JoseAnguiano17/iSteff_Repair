@@ -41,6 +41,7 @@
             this.btnQuit = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMaximize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMinimize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnDBCon = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnPrincipal.SuspendLayout();
             this.pnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDBCon)).BeginInit();
             this.SuspendLayout();
             // 
             // pnPrincipal
@@ -74,7 +76,6 @@
             this.pnContenido.Name = "pnContenido";
             this.pnContenido.Size = new System.Drawing.Size(971, 505);
             this.pnContenido.TabIndex = 1;
-            this.pnContenido.Visible = false;
             // 
             // pnBajo
             // 
@@ -176,6 +177,7 @@
             this.pnAjustar.Controls.Add(this.btnQuit);
             this.pnAjustar.Controls.Add(this.btnMaximize);
             this.pnAjustar.Controls.Add(this.btnMinimize);
+            this.pnAjustar.Controls.Add(this.btnDBCon);
             this.pnAjustar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnAjustar.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.pnAjustar.Location = new System.Drawing.Point(0, 0);
@@ -230,6 +232,21 @@
             this.btnMinimize.Zoom = 10;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // btnDBCon
+            // 
+            this.btnDBCon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.btnDBCon.Image = global::iS_Repair.Properties.Resources.database_error;
+            this.btnDBCon.ImageActive = null;
+            this.btnDBCon.Location = new System.Drawing.Point(853, 5);
+            this.btnDBCon.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnDBCon.Name = "btnDBCon";
+            this.btnDBCon.Size = new System.Drawing.Size(34, 21);
+            this.btnDBCon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDBCon.TabIndex = 11;
+            this.btnDBCon.TabStop = false;
+            this.btnDBCon.Zoom = 10;
+            this.btnDBCon.Click += new System.EventHandler(this.btnDBCon_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +257,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "                                                                    ";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.pnPrincipal.ResumeLayout(false);
             this.pnMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
@@ -251,6 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnQuit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDBCon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -270,6 +289,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btnMaximize;
         private Bunifu.Framework.UI.BunifuImageButton btnMinimize;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btnDBCon;
     }
 }
 
