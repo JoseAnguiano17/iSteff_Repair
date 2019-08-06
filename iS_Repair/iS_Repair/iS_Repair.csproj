@@ -81,6 +81,12 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServerManager.Designer.cs">
+      <DependentUpon>ServerManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pestañas\Clientes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ServerManager.resx">
+      <DependentUpon>ServerManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pestañas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
@@ -175,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Clases\Objects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-conectado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
