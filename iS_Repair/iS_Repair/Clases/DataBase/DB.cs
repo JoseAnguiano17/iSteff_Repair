@@ -93,16 +93,21 @@ namespace iS_Repair.Clases.DataBase
             cmd.ExecuteNonQuery();
         }
 
-        public IEnumerable<Cliente> Clientes()
+        DataTable Tabla(TableBuilder obj)
         {
             Abrir();
-            MySqlCommand cmd = new MySqlCommand(clientes.QuerySelect("*"), miConexion);
-
+            MySqlCommand cmd = new MySqlCommand(obj.QuerySelect("*"), miConexion);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable tabla = new DataTable();
             adapter.Fill(tabla);
             adapter.Dispose();
             Cerrar();
+            return tabla;
+        }
+
+        public IEnumerable<Cliente> Clientes()
+        {
+            DataTable tabla = Tabla(clientes);
 
             foreach (DataRow item in tabla.Rows)
             {
@@ -117,14 +122,7 @@ namespace iS_Repair.Clases.DataBase
 
         public IEnumerable<Historial> Historiales()
         {
-            Abrir();
-            MySqlCommand cmd = new MySqlCommand(historial.QuerySelect("*"), miConexion);
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            adapter.Dispose();
-            Cerrar();
+            DataTable tabla = Tabla(historial);
 
             foreach (DataRow item in tabla.Rows)
             {
@@ -138,14 +136,7 @@ namespace iS_Repair.Clases.DataBase
 
         public IEnumerable<Pedido> Pedidos()
         {
-            Abrir();
-            MySqlCommand cmd = new MySqlCommand(pedidos.QuerySelect("*"), miConexion);
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            adapter.Dispose();
-            Cerrar();
+            DataTable tabla = Tabla(pedidos);
 
             foreach (DataRow item in tabla.Rows)
             {
@@ -163,14 +154,7 @@ namespace iS_Repair.Clases.DataBase
 
         public IEnumerable<Pendiente> Pendientes()
         {
-            Abrir();
-            MySqlCommand cmd = new MySqlCommand(pendientes.QuerySelect("*"), miConexion);
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            adapter.Dispose();
-            Cerrar();
+            DataTable tabla = Tabla(pedidos);
 
             foreach (DataRow item in tabla.Rows)
             {
@@ -185,14 +169,7 @@ namespace iS_Repair.Clases.DataBase
 
         public IEnumerable<Problema> Problemas()
         {
-            Abrir();
-            MySqlCommand cmd = new MySqlCommand(problemas.QuerySelect("*"), miConexion);
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            adapter.Dispose();
-            Cerrar();
+            DataTable tabla = Tabla(problemas);
 
             foreach (DataRow item in tabla.Rows)
             {
@@ -209,14 +186,7 @@ namespace iS_Repair.Clases.DataBase
 
         public IEnumerable<Recibido> Recibidos()
         {
-            Abrir();
-            MySqlCommand cmd = new MySqlCommand(recibidos.QuerySelect("*"), miConexion);
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            adapter.Dispose();
-            Cerrar();
+            DataTable tabla = Tabla(recibidos);
 
             foreach (DataRow item in tabla.Rows)
             {
@@ -230,14 +200,7 @@ namespace iS_Repair.Clases.DataBase
 
         public IEnumerable<Telefono> Telefonos()
         {
-            Abrir();
-            MySqlCommand cmd = new MySqlCommand(telefonos.QuerySelect("*"), miConexion);
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-            DataTable tabla = new DataTable();
-            adapter.Fill(tabla);
-            adapter.Dispose();
-            Cerrar();
+            DataTable tabla = Tabla(telefonos);
 
             foreach (DataRow item in tabla.Rows)
             {
