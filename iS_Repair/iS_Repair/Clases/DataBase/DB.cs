@@ -114,6 +114,7 @@ namespace iS_Repair.Clases.DataBase
             Cerrar();
             return tabla;
         }
+
         #region CLIENTES
         public IEnumerable<Cliente> Clientes()
         {
@@ -129,7 +130,6 @@ namespace iS_Repair.Clases.DataBase
             }
             yield break;
         }
-
         public void AgregarCliente(Cliente miCliente)
         {
             MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
@@ -139,6 +139,8 @@ namespace iS_Repair.Clases.DataBase
             Ejecutar(cmd);
         }
         #endregion
+
+        #region HISTORIALES
         public IEnumerable<Historial> Historiales()
         {
             DataTable tabla = Tabla(historial);
@@ -152,7 +154,16 @@ namespace iS_Repair.Clases.DataBase
             }
             yield break;
         }
+        public void AgregarHistorial(Historial miHistorial)
+        {
+            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@id_telefono", miHistorial.IdTelefono);
+            cmd.Parameters.AddWithValue("@id_problema", miHistorial.IdProblema);
+            Ejecutar(cmd);
+        }
+        #endregion
 
+        #region PEDIDOS
         public IEnumerable<Pedido> Pedidos()
         {
             DataTable tabla = Tabla(pedidos);
@@ -170,7 +181,20 @@ namespace iS_Repair.Clases.DataBase
             }
             yield break;
         }
+        public void AgregarPedido(Pedido miPedido)
+        {
+            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@id_cliente", miPedido.IdCliente);
+            cmd.Parameters.AddWithValue("@pieza", miPedido.Pieza);
+            cmd.Parameters.AddWithValue("@costo", miPedido.Costo);
+            cmd.Parameters.AddWithValue("@pedido", (miPedido.EsPedido) ? 1 : 0 );
+            cmd.Parameters.AddWithValue("@fecha_pedido", miPedido.FechaPedido);
+            cmd.Parameters.AddWithValue("@fecha_registro", miPedido.FechaRegistro);
+            Ejecutar(cmd);
+        }
+        #endregion
 
+        #region PENDIENTES
         public IEnumerable<Pendiente> Pendientes()
         {
             DataTable tabla = Tabla(pendientes);
@@ -185,7 +209,17 @@ namespace iS_Repair.Clases.DataBase
             }
             yield break;
         }
+        public void AgregarPendiente(Pendiente miPendiente)
+        {
+            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@id_pendientes", miPendiente.Id);
+            cmd.Parameters.AddWithValue("@descripcion", miPendiente.Descripcion);
+            cmd.Parameters.AddWithValue("@fecha_registro", miPendiente.FechaRegistro);
+            Ejecutar(cmd);
+        }
+        #endregion
 
+        #region PROBLEMAS
         public IEnumerable<Problema> Problemas()
         {
             DataTable tabla = Tabla(problemas);
@@ -202,7 +236,19 @@ namespace iS_Repair.Clases.DataBase
             }
             yield break;
         }
+        public void AgregarProblema(Problema miProblema)
+        {
+            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@id_problema", miProblema.Id);
+            cmd.Parameters.AddWithValue("@nombre", miProblema.Nombre);
+            cmd.Parameters.AddWithValue("@costo", miProblema.Costo);
+            cmd.Parameters.AddWithValue("@id_estado", miProblema.IdEstado);
+            cmd.Parameters.AddWithValue("@fecha_solucion", miProblema.FechaSolucion);
+            Ejecutar(cmd);
+        }
+        #endregion
 
+        #region RECIBIDOS
         public IEnumerable<Recibido> Recibidos()
         {
             DataTable tabla = Tabla(recibidos);
@@ -216,7 +262,16 @@ namespace iS_Repair.Clases.DataBase
             }
             yield break;
         }
+        public void AgregarRecibido(Recibido miRecibido)
+        {
+            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@id_telefono", miRecibido.IdTelefono);
+            cmd.Parameters.AddWithValue("@id_cliente", miRecibido.IdCliente);
+            Ejecutar(cmd);
+        }
+        #endregion
 
+        #region TELEFONOS
         public IEnumerable<Telefono> Telefonos()
         {
             DataTable tabla = Tabla(telefonos);
@@ -236,5 +291,19 @@ namespace iS_Repair.Clases.DataBase
             }
             yield break;
         }
+        public void AgregarTelefono(Telefono miTelefono)
+        {
+            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@id_telefono", miTelefono.IdTelefono);
+            cmd.Parameters.AddWithValue("@modelo", miTelefono.Modelo);
+            cmd.Parameters.AddWithValue("@descripcion", miTelefono.Descripcion);
+            cmd.Parameters.AddWithValue("@fecha_llegada", miTelefono.FechaLlegada);
+            cmd.Parameters.AddWithValue("@id_problema", miTelefono.IdProblema);
+            cmd.Parameters.AddWithValue("@armado", (miTelefono.Armado) ? 1 : 0);
+            cmd.Parameters.AddWithValue("@imei", miTelefono.Imei);
+            cmd.Parameters.AddWithValue("@contrasena", miTelefono.Contrasena);
+            Ejecutar(cmd);
+        }
+        #endregion
     }
 }
