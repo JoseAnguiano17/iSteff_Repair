@@ -54,14 +54,13 @@ namespace iS_Repair.Clases.DataBase
             /**
              * Creacion de tablas.
              **/
-            Executar(clientes.QueryTable());
-            Executar(recibidos.QueryTable());
-            Executar(telefonos.QueryTable());
-            Executar(problemas.QueryTable());
-            Executar(historial.QueryTable());
-            Executar(pendientes.QueryTable());
-            Executar(pedidos.QueryTable());
-            Cerrar();
+            Ejecutar(clientes.QueryTable());
+            Ejecutar(recibidos.QueryTable());
+            Ejecutar(telefonos.QueryTable());
+            Ejecutar(problemas.QueryTable());
+            Ejecutar(historial.QueryTable());
+            Ejecutar(pendientes.QueryTable());
+            Ejecutar(pedidos.QueryTable());
         }
         public void Abrir()
         {
@@ -85,12 +84,23 @@ namespace iS_Repair.Clases.DataBase
         {
             return blConexionEstablecida;
         }
-
-        //Executa Querys solo si la conexion esta abierta.
-        void Executar(string query)
+        void Ejecutar(String query)
         {
-            MySqlCommand cmd = new MySqlCommand(query, miConexion);
-            cmd.ExecuteNonQuery();
+            Ejecutar(new MySqlCommand(query, miConexion));
+        }
+
+        void Ejecutar(MySqlCommand cmd)
+        {
+            Abrir();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error al ejecutar el comando en la base de datos.");
+            }
+            Cerrar();
         }
 
         DataTable Tabla(TableBuilder obj)
@@ -104,7 +114,7 @@ namespace iS_Repair.Clases.DataBase
             Cerrar();
             return tabla;
         }
-
+        #region CLIENTES
         public IEnumerable<Cliente> Clientes()
         {
             DataTable tabla = Tabla(clientes);
@@ -120,6 +130,15 @@ namespace iS_Repair.Clases.DataBase
             yield break;
         }
 
+        public void AgregarCliente(Cliente miCliente)
+        {
+            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@id_cliente",miCliente.ID);
+            cmd.Parameters.AddWithValue("@nombre",miCliente.Nombre);
+            cmd.Parameters.AddWithValue("@n_telefono", miCliente.NumeroTelefono);
+            Ejecutar(cmd);
+        }
+        #endregion
         public IEnumerable<Historial> Historiales()
         {
             DataTable tabla = Tabla(historial);
@@ -154,7 +173,7 @@ namespace iS_Repair.Clases.DataBase
 
         public IEnumerable<Pendiente> Pendientes()
         {
-            DataTable tabla = Tabla(pedidos);
+            DataTable tabla = Tabla(pendientes);
 
             foreach (DataRow item in tabla.Rows)
             {
