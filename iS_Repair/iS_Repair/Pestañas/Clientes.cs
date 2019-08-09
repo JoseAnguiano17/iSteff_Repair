@@ -17,5 +17,12 @@ namespace iS_Repair.Pestañas
             InitializeComponent();
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void Clientes_SizeChanged(object sender, EventArgs e)
+        {
+            dgvClientes.Height = (int)(this.Height * .9);
+            dgvClientes.Width = (int)(this.Width * .7);
+            pnlFiltros.Height = (int)(this.Height * .8);
+        }
     }
 }

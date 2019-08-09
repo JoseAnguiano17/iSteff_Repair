@@ -79,7 +79,7 @@ namespace iS_Repair.Clases.DataBase
             catch { }
         }
 
-        public void Cerrar()
+         public void Cerrar()
         {
             if (miConexion.State == ConnectionState.Open)
             {

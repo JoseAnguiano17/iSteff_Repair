@@ -48,7 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblPrueba);
             this.Name = "Telefonos";
-            this.Size = new System.Drawing.Size(971, 505);
+            this.Size = new System.Drawing.Size(971, 620);
             this.ResumeLayout(false);
             this.PerformLayout();
 

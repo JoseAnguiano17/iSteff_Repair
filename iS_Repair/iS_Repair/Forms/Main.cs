@@ -125,27 +125,39 @@ namespace iS_Repair
             pnContenido.Controls.Clear();
             pestaña.Dock = DockStyle.Fill;
             contActual = pestaña;
-            pnContenido.Controls.Add(pestaña);
+            pnContenido.Controls.Add(contActual);
         }
 
         private void btnTelefonos_Click(object sender, EventArgs e)
         {
-            CambiarContenido(new Telefonos());
+            if(! (contActual is Telefonos))
+            {
+                CambiarContenido(new Telefonos());
+            }
         }
 
         private void btnPendientes_Click(object sender, EventArgs e)
         {
-            CambiarContenido(new Pendientes());
+            if (!(contActual is Pendientes))
+            {
+                CambiarContenido(new Pendientes());
+            }
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
-            CambiarContenido(new Pedidos());
+            if (!(contActual is Pedidos))
+            {
+                CambiarContenido(new Pedidos());
+            }
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            CambiarContenido(new Clientes());
+            if (!(contActual is Clientes))
+            {
+                CambiarContenido(new Clientes());
+            }
         }
 
         #endregion
