@@ -62,6 +62,7 @@ namespace iS_Repair.Clases.DataBase
             Ejecutar(pendientes.QueryTable());
             Ejecutar(pedidos.QueryTable());
         }
+
         public void Abrir()
         {
             try
@@ -73,6 +74,7 @@ namespace iS_Repair.Clases.DataBase
             }
             catch { }
         }
+
         public void Cerrar()
         {
             if (miConexion.State == ConnectionState.Open)
@@ -80,10 +82,12 @@ namespace iS_Repair.Clases.DataBase
                 miConexion.Close();
             }
         }
+
         public bool ConexionEstablecida()
         {
             return blConexionEstablecida;
         }
+
         void Ejecutar(String query)
         {
             Ejecutar(new MySqlCommand(query, miConexion));
@@ -103,10 +107,22 @@ namespace iS_Repair.Clases.DataBase
             Cerrar();
         }
 
+        public void Modificar(string tabla, string set, string where)
+        {
+            MySqlCommand cmd = new MySqlCommand("UPDATE " + tabla + " SET " + set + " WHERE " + where, miConexion);
+            Ejecutar(cmd);
+
+        }
+
         DataTable Tabla(TableBuilder obj)
         {
+            return Tabla(obj, obj.QuerySelect("*"));
+        }
+
+        DataTable Tabla(TableBuilder obj, string querySelect)
+        {
             Abrir();
-            MySqlCommand cmd = new MySqlCommand(obj.QuerySelect("*"), miConexion);
+            MySqlCommand cmd = new MySqlCommand(querySelect, miConexion);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable tabla = new DataTable();
             adapter.Fill(tabla);
@@ -138,6 +154,12 @@ namespace iS_Repair.Clases.DataBase
             cmd.Parameters.AddWithValue("@n_telefono", miCliente.NumeroTelefono);
             Ejecutar(cmd);
         }
+        public void EliminarCliente(string id_cliente)
+        {
+            MySqlCommand cmd = new MySqlCommand(clientes.QueryDelete("id_cliente=@id_cliente"), miConexion);
+            cmd.Parameters.AddWithValue("@id_client", id_cliente);
+            Ejecutar(cmd);
+        }
         #endregion
 
         #region HISTORIALES
@@ -156,9 +178,16 @@ namespace iS_Repair.Clases.DataBase
         }
         public void AgregarHistorial(Historial miHistorial)
         {
-            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            MySqlCommand cmd = new MySqlCommand(historial.QueryInsert(), miConexion);
             cmd.Parameters.AddWithValue("@id_telefono", miHistorial.IdTelefono);
             cmd.Parameters.AddWithValue("@id_problema", miHistorial.IdProblema);
+            Ejecutar(cmd);
+        }
+        public void EliminarHistorial(string id_telefono,string id_problema)
+        {
+            MySqlCommand cmd = new MySqlCommand(historial.QueryDelete("id_telefono=@id_telefono AND id_problema=@id_problema"), miConexion);
+            cmd.Parameters.AddWithValue("@id_telefono", id_telefono);
+            cmd.Parameters.AddWithValue("@id_problema", id_problema);
             Ejecutar(cmd);
         }
         #endregion
@@ -173,23 +202,29 @@ namespace iS_Repair.Clases.DataBase
                 Pedido pedido = new Pedido();
                 pedido.IdCliente = item[0].ToString();
                 pedido.Pieza = item[1].ToString();
-                pedido.Costo = double.Parse(item[2].ToString());
-                pedido.EsPedido = (item[3].ToString() == "1") ? true : false;
-                pedido.FechaPedido = DateTime.Parse(item[4].ToString());
-                pedido.FechaRegistro = DateTime.Parse(item[5].ToString());
+                pedido.Costo = (double) item[2];
+                pedido.EsPedido = (bool)item[3];
+                pedido.FechaPedido = (DateTime)item[4];
+                pedido.FechaRegistro = (DateTime)item[5];
                 yield return pedido;
             }
             yield break;
         }
         public void AgregarPedido(Pedido miPedido)
         {
-            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            MySqlCommand cmd = new MySqlCommand(pedidos.QueryInsert(), miConexion);
             cmd.Parameters.AddWithValue("@id_cliente", miPedido.IdCliente);
             cmd.Parameters.AddWithValue("@pieza", miPedido.Pieza);
             cmd.Parameters.AddWithValue("@costo", miPedido.Costo);
-            cmd.Parameters.AddWithValue("@pedido", (miPedido.EsPedido) ? 1 : 0 );
+            cmd.Parameters.AddWithValue("@pedido", miPedido.EsPedido);
             cmd.Parameters.AddWithValue("@fecha_pedido", miPedido.FechaPedido);
             cmd.Parameters.AddWithValue("@fecha_registro", miPedido.FechaRegistro);
+            Ejecutar(cmd);
+        }
+        public void EliminarPedido(string id_cliente)
+        {
+            MySqlCommand cmd = new MySqlCommand(pedidos.QueryDelete("id_cliente=@id_cliente"), miConexion);
+            cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
             Ejecutar(cmd);
         }
         #endregion
@@ -204,17 +239,23 @@ namespace iS_Repair.Clases.DataBase
                 Pendiente pendiente = new Pendiente();
                 pendiente.Id = item[0].ToString();
                 pendiente.Descripcion = item[1].ToString();
-                pendiente.FechaRegistro = DateTime.Parse(item[2].ToString());
+                pendiente.FechaRegistro = (DateTime)item[2];
                 yield return pendiente;
             }
             yield break;
         }
         public void AgregarPendiente(Pendiente miPendiente)
         {
-            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            MySqlCommand cmd = new MySqlCommand(pendientes.QueryInsert(), miConexion);
             cmd.Parameters.AddWithValue("@id_pendientes", miPendiente.Id);
             cmd.Parameters.AddWithValue("@descripcion", miPendiente.Descripcion);
             cmd.Parameters.AddWithValue("@fecha_registro", miPendiente.FechaRegistro);
+            Ejecutar(cmd);
+        }
+        public void EliminarPendientes(string id_pendientes)
+        {
+            MySqlCommand cmd = new MySqlCommand(pendientes.QueryDelete("id_pendientes=@id_pendientes"), miConexion);
+            cmd.Parameters.AddWithValue("@id_pendientes", id_pendientes);
             Ejecutar(cmd);
         }
         #endregion
@@ -229,21 +270,27 @@ namespace iS_Repair.Clases.DataBase
                 Problema problema = new Problema();
                 problema.Id = item[0].ToString();
                 problema.Nombre = item[1].ToString();
-                problema.Costo = double.Parse(item[2].ToString());
+                problema.Costo = (double)item[2];
                 problema.IdEstado = item[3].ToString();
-                problema.FechaSolucion = DateTime.Parse(item[4].ToString());
+                problema.FechaSolucion = (DateTime)item[4];
                 yield return problema;
             }
             yield break;
         }
         public void AgregarProblema(Problema miProblema)
         {
-            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            MySqlCommand cmd = new MySqlCommand(problemas.QueryInsert(), miConexion);
             cmd.Parameters.AddWithValue("@id_problema", miProblema.Id);
             cmd.Parameters.AddWithValue("@nombre", miProblema.Nombre);
             cmd.Parameters.AddWithValue("@costo", miProblema.Costo);
             cmd.Parameters.AddWithValue("@id_estado", miProblema.IdEstado);
             cmd.Parameters.AddWithValue("@fecha_solucion", miProblema.FechaSolucion);
+            Ejecutar(cmd);
+        }
+        public void EliminarProblema(string id_problema)
+        {
+            MySqlCommand cmd = new MySqlCommand(problemas.QueryDelete("id_problema=@id_problema"), miConexion);
+            cmd.Parameters.AddWithValue("@id_problema", id_problema);
             Ejecutar(cmd);
         }
         #endregion
@@ -264,9 +311,16 @@ namespace iS_Repair.Clases.DataBase
         }
         public void AgregarRecibido(Recibido miRecibido)
         {
-            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            MySqlCommand cmd = new MySqlCommand(recibidos.QueryInsert(), miConexion);
             cmd.Parameters.AddWithValue("@id_telefono", miRecibido.IdTelefono);
             cmd.Parameters.AddWithValue("@id_cliente", miRecibido.IdCliente);
+            Ejecutar(cmd);
+        }
+        public void EliminarRecibido(string id_telefono, string id_cliente)
+        {
+            MySqlCommand cmd = new MySqlCommand(recibidos.QueryDelete("id_telefono=@id_telefono AND id_cliente=@id_cliente"), miConexion);
+            cmd.Parameters.AddWithValue("@id_telefono", id_telefono);
+            cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
             Ejecutar(cmd);
         }
         #endregion
@@ -282,9 +336,9 @@ namespace iS_Repair.Clases.DataBase
                 telefono.IdTelefono = item[0].ToString();
                 telefono.Modelo = item[1].ToString();
                 telefono.Descripcion = item[2].ToString();
-                telefono.FechaLlegada = DateTime.Parse(item[3].ToString());
+                telefono.FechaLlegada = (DateTime)item[3];
                 telefono.IdProblema = item[4].ToString();
-                telefono.Armado = (item[5].ToString() == "1") ? true : false;
+                telefono.Armado = (bool)item[5];
                 telefono.Imei = item[6].ToString();
                 telefono.Contrasena = item[7].ToString();
                 yield return telefono;
@@ -293,15 +347,21 @@ namespace iS_Repair.Clases.DataBase
         }
         public void AgregarTelefono(Telefono miTelefono)
         {
-            MySqlCommand cmd = new MySqlCommand(clientes.QueryInsert(), miConexion);
+            MySqlCommand cmd = new MySqlCommand(telefonos.QueryInsert(), miConexion);
             cmd.Parameters.AddWithValue("@id_telefono", miTelefono.IdTelefono);
             cmd.Parameters.AddWithValue("@modelo", miTelefono.Modelo);
             cmd.Parameters.AddWithValue("@descripcion", miTelefono.Descripcion);
             cmd.Parameters.AddWithValue("@fecha_llegada", miTelefono.FechaLlegada);
             cmd.Parameters.AddWithValue("@id_problema", miTelefono.IdProblema);
-            cmd.Parameters.AddWithValue("@armado", (miTelefono.Armado) ? 1 : 0);
+            cmd.Parameters.AddWithValue("@armado", miTelefono.Armado);
             cmd.Parameters.AddWithValue("@imei", miTelefono.Imei);
             cmd.Parameters.AddWithValue("@contrasena", miTelefono.Contrasena);
+            Ejecutar(cmd);
+        }
+        public void EliminarTelefono(string id_telefono)
+        {
+            MySqlCommand cmd = new MySqlCommand(telefonos.QueryDelete("id_telefono=@id_telefono"), miConexion);
+            cmd.Parameters.AddWithValue("@id_telefono", id_telefono);
             Ejecutar(cmd);
         }
         #endregion
