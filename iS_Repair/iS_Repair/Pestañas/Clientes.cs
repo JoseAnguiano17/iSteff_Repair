@@ -15,6 +15,7 @@ namespace iS_Repair.Pestañas
         public Clientes()
         {
             InitializeComponent();
+            dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
