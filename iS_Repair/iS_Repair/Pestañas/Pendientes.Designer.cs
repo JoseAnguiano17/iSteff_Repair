@@ -28,18 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblPrueba = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblPrueba
+            // 
+            this.lblPrueba.AutoSize = true;
+            this.lblPrueba.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblPrueba.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrueba.Location = new System.Drawing.Point(825, 0);
+            this.lblPrueba.Name = "lblPrueba";
+            this.lblPrueba.Size = new System.Drawing.Size(146, 37);
+            this.lblPrueba.TabIndex = 1;
+            this.lblPrueba.Text = "Pendientes";
             // 
             // Pendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblPrueba);
             this.Name = "Pendientes";
             this.Size = new System.Drawing.Size(971, 505);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblPrueba;
     }
 }

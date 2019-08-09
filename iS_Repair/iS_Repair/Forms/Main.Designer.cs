@@ -33,10 +33,10 @@
             this.pnBajo = new System.Windows.Forms.Panel();
             this.pnMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btn1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnClientes = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnTelefonos = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnPendientes = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnPedidos = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnAjustar = new System.Windows.Forms.FlowLayoutPanel();
             this.btnQuit = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnMaximize = new Bunifu.Framework.UI.BunifuImageButton();
@@ -45,10 +45,10 @@
             this.pnPrincipal.SuspendLayout();
             this.pnMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTelefonos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPendientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPedidos)).BeginInit();
             this.pnAjustar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).BeginInit();
@@ -90,10 +90,10 @@
             // 
             this.pnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.pnMenu.Controls.Add(this.pbLogo);
-            this.pnMenu.Controls.Add(this.btn1);
-            this.pnMenu.Controls.Add(this.btn2);
-            this.pnMenu.Controls.Add(this.btn3);
-            this.pnMenu.Controls.Add(this.bunifuImageButton1);
+            this.pnMenu.Controls.Add(this.btnClientes);
+            this.pnMenu.Controls.Add(this.btnTelefonos);
+            this.pnMenu.Controls.Add(this.btnPendientes);
+            this.pnMenu.Controls.Add(this.btnPedidos);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnMenu.Location = new System.Drawing.Point(0, 29);
             this.pnMenu.Name = "pnMenu";
@@ -111,65 +111,69 @@
             this.pbLogo.TabIndex = 8;
             this.pbLogo.TabStop = false;
             // 
-            // btn1
+            // btnClientes
             // 
-            this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.btn1.Image = global::iS_Repair.Properties.Resources.clients;
-            this.btn1.ImageActive = null;
-            this.btn1.InitialImage = null;
-            this.btn1.Location = new System.Drawing.Point(267, 5);
-            this.btn1.Margin = new System.Windows.Forms.Padding(0, 5, 10, 10);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(71, 69);
-            this.btn1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn1.TabIndex = 5;
-            this.btn1.TabStop = false;
-            this.btn1.Zoom = 10;
+            this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.btnClientes.Image = global::iS_Repair.Properties.Resources.clients;
+            this.btnClientes.ImageActive = null;
+            this.btnClientes.InitialImage = null;
+            this.btnClientes.Location = new System.Drawing.Point(267, 5);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(0, 5, 10, 10);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(71, 69);
+            this.btnClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClientes.TabIndex = 5;
+            this.btnClientes.TabStop = false;
+            this.btnClientes.Zoom = 10;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // btn2
+            // btnTelefonos
             // 
-            this.btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.btn2.Image = global::iS_Repair.Properties.Resources.telephones;
-            this.btn2.ImageActive = null;
-            this.btn2.InitialImage = null;
-            this.btn2.Location = new System.Drawing.Point(348, 5);
-            this.btn2.Margin = new System.Windows.Forms.Padding(0, 5, 10, 10);
-            this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(71, 69);
-            this.btn2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn2.TabIndex = 6;
-            this.btn2.TabStop = false;
-            this.btn2.Zoom = 10;
+            this.btnTelefonos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.btnTelefonos.Image = global::iS_Repair.Properties.Resources.telephones;
+            this.btnTelefonos.ImageActive = null;
+            this.btnTelefonos.InitialImage = null;
+            this.btnTelefonos.Location = new System.Drawing.Point(348, 5);
+            this.btnTelefonos.Margin = new System.Windows.Forms.Padding(0, 5, 10, 10);
+            this.btnTelefonos.Name = "btnTelefonos";
+            this.btnTelefonos.Size = new System.Drawing.Size(71, 69);
+            this.btnTelefonos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnTelefonos.TabIndex = 6;
+            this.btnTelefonos.TabStop = false;
+            this.btnTelefonos.Zoom = 10;
+            this.btnTelefonos.Click += new System.EventHandler(this.btnTelefonos_Click);
             // 
-            // btn3
+            // btnPendientes
             // 
-            this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.btn3.Image = global::iS_Repair.Properties.Resources.pending;
-            this.btn3.ImageActive = null;
-            this.btn3.InitialImage = null;
-            this.btn3.Location = new System.Drawing.Point(429, 5);
-            this.btn3.Margin = new System.Windows.Forms.Padding(0, 5, 10, 10);
-            this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(71, 69);
-            this.btn3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn3.TabIndex = 7;
-            this.btn3.TabStop = false;
-            this.btn3.Zoom = 10;
+            this.btnPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.btnPendientes.Image = global::iS_Repair.Properties.Resources.pending;
+            this.btnPendientes.ImageActive = null;
+            this.btnPendientes.InitialImage = null;
+            this.btnPendientes.Location = new System.Drawing.Point(429, 5);
+            this.btnPendientes.Margin = new System.Windows.Forms.Padding(0, 5, 10, 10);
+            this.btnPendientes.Name = "btnPendientes";
+            this.btnPendientes.Size = new System.Drawing.Size(71, 69);
+            this.btnPendientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPendientes.TabIndex = 7;
+            this.btnPendientes.TabStop = false;
+            this.btnPendientes.Zoom = 10;
+            this.btnPendientes.Click += new System.EventHandler(this.btnPendientes_Click);
             // 
-            // bunifuImageButton1
+            // btnPedidos
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.bunifuImageButton1.Image = global::iS_Repair.Properties.Resources.box;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.InitialImage = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(510, 5);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(0, 5, 10, 10);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(71, 69);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 9;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btnPedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.btnPedidos.Image = global::iS_Repair.Properties.Resources.box;
+            this.btnPedidos.ImageActive = null;
+            this.btnPedidos.InitialImage = null;
+            this.btnPedidos.Location = new System.Drawing.Point(510, 5);
+            this.btnPedidos.Margin = new System.Windows.Forms.Padding(0, 5, 10, 10);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(71, 69);
+            this.btnPedidos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPedidos.TabIndex = 9;
+            this.btnPedidos.TabStop = false;
+            this.btnPedidos.Zoom = 10;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // pnAjustar
             // 
@@ -261,10 +265,10 @@
             this.pnPrincipal.ResumeLayout(false);
             this.pnMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTelefonos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPendientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPedidos)).EndInit();
             this.pnAjustar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnQuit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();
@@ -280,15 +284,15 @@
         private System.Windows.Forms.Panel pnContenido;
         private System.Windows.Forms.Panel pnBajo;
         private System.Windows.Forms.FlowLayoutPanel pnMenu;
-        private Bunifu.Framework.UI.BunifuImageButton btn1;
-        private Bunifu.Framework.UI.BunifuImageButton btn2;
-        private Bunifu.Framework.UI.BunifuImageButton btn3;
+        private Bunifu.Framework.UI.BunifuImageButton btnClientes;
+        private Bunifu.Framework.UI.BunifuImageButton btnTelefonos;
+        private Bunifu.Framework.UI.BunifuImageButton btnPendientes;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.FlowLayoutPanel pnAjustar;
         private Bunifu.Framework.UI.BunifuImageButton btnQuit;
         private Bunifu.Framework.UI.BunifuImageButton btnMaximize;
         private Bunifu.Framework.UI.BunifuImageButton btnMinimize;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btnPedidos;
         private Bunifu.Framework.UI.BunifuImageButton btnDBCon;
     }
 }

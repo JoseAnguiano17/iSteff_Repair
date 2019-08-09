@@ -1,6 +1,7 @@
 ﻿using iS_Repair.Clases.DataBase;
 using iS_Repair.Clases.Utils;
 using iS_Repair.Forms;
+using iS_Repair.Pestañas;
 using System;
 using System.Windows.Forms;
 
@@ -11,7 +12,7 @@ namespace iS_Repair
         DB myDataBase;
         Archivo<DataHost> ArchivoServer = new Archivo<DataHost>("Host.dat");
         DataHost dh = null;
-
+        UserControl contActual;
         int xClick = 0, yClick = 0;
 
         public MainForm()
@@ -112,6 +113,42 @@ namespace iS_Repair
         {
             btnMaximize_Click(sender, e);
         }
-        
+
+        #region CONTENIDO
+        void CambiarContenido(UserControl pestaña)
+        {
+            if(contActual != null)
+            {
+                //Se pierde contenido actual.
+                contActual = null;   
+            }
+            pnContenido.Controls.Clear();
+            pestaña.Dock = DockStyle.Fill;
+            contActual = pestaña;
+            pnContenido.Controls.Add(pestaña);
+        }
+
+        private void btnTelefonos_Click(object sender, EventArgs e)
+        {
+            CambiarContenido(new Telefonos());
+        }
+
+        private void btnPendientes_Click(object sender, EventArgs e)
+        {
+            CambiarContenido(new Pendientes());
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            CambiarContenido(new Pedidos());
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            CambiarContenido(new Clientes());
+        }
+
+        #endregion
+
     }
 }
