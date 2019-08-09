@@ -32,14 +32,16 @@ namespace iS_Repair.Clases.DataBase
                                                                  "descripcion TEXT," +
                                                                  "fecha_registro DATETIME");
         TableBuilder pedidos = new TableBuilder("pedidos", "id_cliente VARCHAR(8)," +
+                                                           "id_pedido VARCHAR(8)," +
                                                            "pieza VARCHAR(40)," +
                                                            "costo DOUBLE," +
                                                            "pedido BOOLEAN," +
                                                            "fecha_pedido DATETIME," +
                                                            "fecha_registro DATETIME");
         #endregion
-
+         
         MySqlConnection miConexion;
+
         bool blConexionEstablecida = false;
 
         public DB(DataHost dh, string password)
@@ -202,11 +204,12 @@ namespace iS_Repair.Clases.DataBase
             {
                 Pedido pedido = new Pedido();
                 pedido.IdCliente = item[0].ToString();
-                pedido.Pieza = item[1].ToString();
-                pedido.Costo = (double) item[2];
-                pedido.EsPedido = (bool)item[3];
-                pedido.FechaPedido = (DateTime)item[4];
-                pedido.FechaRegistro = (DateTime)item[5];
+                pedido.IdPedido = item[1].ToString();
+                pedido.Pieza = item[2].ToString();
+                pedido.Costo = (double) item[3];
+                pedido.EsPedido = (bool)item[4];
+                pedido.FechaPedido = (DateTime)item[5];
+                pedido.FechaRegistro = (DateTime)item[6];
                 yield return pedido;
             }
             yield break;
@@ -215,6 +218,7 @@ namespace iS_Repair.Clases.DataBase
         {
             MySqlCommand cmd = new MySqlCommand(pedidos.QueryInsert(), miConexion);
             cmd.Parameters.AddWithValue("@id_cliente", miPedido.IdCliente);
+            cmd.Parameters.AddWithValue("@id_pedido", miPedido.IdPedido);
             cmd.Parameters.AddWithValue("@pieza", miPedido.Pieza);
             cmd.Parameters.AddWithValue("@costo", miPedido.Costo);
             cmd.Parameters.AddWithValue("@pedido", miPedido.EsPedido);
@@ -222,10 +226,11 @@ namespace iS_Repair.Clases.DataBase
             cmd.Parameters.AddWithValue("@fecha_registro", miPedido.FechaRegistro);
             Ejecutar(cmd);
         }
-        public void EliminarPedido(string id_cliente)
+        public void EliminarPedido(string id_cliente,string id_pedido)
         {
-            MySqlCommand cmd = new MySqlCommand(pedidos.QueryDelete("id_cliente=@id_cliente"), miConexion);
+            MySqlCommand cmd = new MySqlCommand(pedidos.QueryDelete("id_cliente=@id_cliente AND id_pedido=@id_pedido"), miConexion);
             cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
+            cmd.Parameters.AddWithValue("@id_pedido", id_pedido);
             Ejecutar(cmd);
         }
         #endregion

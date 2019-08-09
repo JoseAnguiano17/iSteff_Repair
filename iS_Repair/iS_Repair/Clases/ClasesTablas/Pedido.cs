@@ -16,6 +16,13 @@ namespace iS_Repair.Clases.ClasesTablas
             set { _strIdCliente = value; }
         }
 
+        private string _idPedido;
+
+        public string IdPedido {
+            get { return _idPedido; }
+            set { _idPedido = value; }
+        }
+
         private string _strPieza;
 
         public string Pieza
