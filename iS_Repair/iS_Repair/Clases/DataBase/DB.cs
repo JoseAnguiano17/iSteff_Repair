@@ -7,6 +7,7 @@ namespace iS_Repair.Clases.DataBase
 {
     public class DB
     {
+        #region TABLAS
         TableBuilder clientes = new TableBuilder("clientes", "id_cliente VARCHAR(8)," +
                                                             "nombre TEXT," +
                                                             "n_telefono VARCHAR(14)");
@@ -36,6 +37,7 @@ namespace iS_Repair.Clases.DataBase
                                                            "pedido BOOLEAN," +
                                                            "fecha_pedido DATETIME," +
                                                            "fecha_registro DATETIME");
+        #endregion
 
         MySqlConnection miConexion;
         bool blConexionEstablecida = false;
@@ -111,7 +113,6 @@ namespace iS_Repair.Clases.DataBase
         {
             MySqlCommand cmd = new MySqlCommand("UPDATE " + tabla + " SET " + set + " WHERE " + where, miConexion);
             Ejecutar(cmd);
-
         }
 
         DataTable Tabla(TableBuilder obj)
@@ -157,7 +158,7 @@ namespace iS_Repair.Clases.DataBase
         public void EliminarCliente(string id_cliente)
         {
             MySqlCommand cmd = new MySqlCommand(clientes.QueryDelete("id_cliente=@id_cliente"), miConexion);
-            cmd.Parameters.AddWithValue("@id_client", id_cliente);
+            cmd.Parameters.AddWithValue("@id_cliente", id_cliente);
             Ejecutar(cmd);
         }
         #endregion
