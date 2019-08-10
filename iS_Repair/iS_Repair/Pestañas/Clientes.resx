@@ -126,4 +126,18 @@
   <metadata name="NoTelefono.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRegistrar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHwAAAAmCAYAAAAGC/8vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGESURBVHhe7ZqhTwMxFIcnkUgkEjmJ5D/ojYQExyRyErn/
+        AjlPOE4ikUjk1qs4iUQioa/XQYC3QVDru+9LvixL3mp+1/bt2hEAAAAAAJTI7enqqHHhpHF+Gj/nuGum
+        XCSfcY7sfzSuncWBlk0V3rAM6yp08hAsLrq9HOPv5Bn9qA2IhRgnaj1pj3Okm+mXB/+qDoLFeVe1Vzna
+        n/Qzm7DNGff3HPFXWMaN6vxz47r9HHNPatC0YjRhbOYWOeqe1N0phWhE2arXszx+GatFaEu3qlLg9cSf
+        qwVoyo+Onf17ILowz4GHuVqAtiTwgUngA5PAByaBD8x14NKuqwVoy88Z7qdqAdpyHbicm6oFaEp5wZYC
+        l9sRdeVftCI0pFsepsCFZhKu1SI0YV2Fpxx1z81Zd5DOTZViLNx0UqZccJTTFPUHWLRbrzmxtBvT+fsc
+        7WbkbxpNXOHGZXzrzP6O7Okx9Ad1MNxt/3pFWUNa+fikXKbXr7jjtjO5eZyjAwAAAIAyGY3eAXmfT/bd
+        MQz5AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>
