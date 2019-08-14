@@ -1,4 +1,5 @@
-﻿using iS_Repair.Clases.DataBase;
+﻿using iS_Repair.Clases.ClasesTablas;
+using iS_Repair.Clases.DataBase;
 using iS_Repair.Clases.Utils;
 using iS_Repair.Forms;
 using iS_Repair.Pestañas;
@@ -31,6 +32,10 @@ namespace iS_Repair
             {
                 MessageUtil.Error("No hay base de datos guardada.");
             }
+        }
+
+        public DB DataBase {
+            get { return myDataBase; }
         }
 
         public void ConectarDB(DataHost dh)
@@ -132,7 +137,7 @@ namespace iS_Repair
         {
             if(! (contActual is Telefonos))
             {
-                CambiarContenido(new Telefonos());
+                CambiarContenido(new Telefonos(this));
             }
         }
 
@@ -140,7 +145,7 @@ namespace iS_Repair
         {
             if (!(contActual is Pendientes))
             {
-                CambiarContenido(new Pendientes());
+                CambiarContenido(new Pendientes(this));
             }
         }
 
@@ -148,7 +153,7 @@ namespace iS_Repair
         {
             if (!(contActual is Pedidos))
             {
-                CambiarContenido(new Pedidos());
+                CambiarContenido(new Pedidos(this));
             }
         }
 
@@ -156,7 +161,7 @@ namespace iS_Repair
         {
             if (!(contActual is Clientes))
             {
-                CambiarContenido(new Clientes());
+                CambiarContenido(new Clientes(this));
             }
         }
 

@@ -7,28 +7,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iS_Repair.Clases;
 
 namespace iS_Repair.Pestañas
 {
     public partial class Clientes : UserControl
     {
-        public Clientes()
+        MainForm origen;
+
+        public Clientes(MainForm origen)
         {
             InitializeComponent();
+            this.origen = origen;
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvClientes.Columns[0].Width = 30;
+            ActualizarDGV();
+        }
+
+        void ActualizarDGV()
+        {
+            dgvClientes.Rows.Clear();
+            foreach (Cliente item in origen.DataBase.Clientes())
+            {
+                dgvClientes.Rows.Add(item.ID, item.Nombre, item.NumeroTelefono);
+            }
         }
 
         private void Clientes_SizeChanged(object sender, EventArgs e)
         {
-            //dgvClientes.Height = (int)(this.Height * .9);
-            //dgvClientes.Width = (int)(this.Width * .7);
-            //pnlFiltros.Height = (int)(this.Height * .8);
+            if(MainForm.ActiveForm.WindowState == FormWindowState.Maximized)
+            {
+                dgvClientes.Width = (int)(pnContenido.Width * .77);
+            } else{
+                dgvClientes.Width = (int)(pnContenido.Width * .7);
+            }
+            sepDivisor.Width = (int)(pnContenido.Width * .95);
+            dgvClientes.Height = (int)(pnContenido.Height * .9);
+            pnlFiltros.Height = (int)(pnContenido.Height * .8);
         }
 
         private void TxtFiltroID_OnValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDownTopPanel_Click(object sender, EventArgs e)
+        {
+            if(pnTop.Height <= 50)
+            {
+                pnTop.Height = cardDatosCLiente.Height + sepDivisor.Height + 50;
+            }
+            else
+            {
+                pnTop.Height = 50;
+            }
         }
     }
 }

@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ClasesTablas\Cliente.cs" />
+    <Compile Include="Clases\ClasesTablas\Contadores.cs" />
+    <Compile Include="Clases\ClasesTablas\Empleado.cs" />
     <Compile Include="Clases\ClasesTablas\Historial.cs" />
     <Compile Include="Clases\ClasesTablas\Pedido.cs" />
     <Compile Include="Clases\ClasesTablas\Pendiente.cs" />
@@ -203,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\teclado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

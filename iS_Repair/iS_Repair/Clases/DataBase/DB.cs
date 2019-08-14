@@ -12,34 +12,45 @@ namespace iS_Repair.Clases.DataBase
                                                             "nombre TEXT," +
                                                             "n_telefono VARCHAR(14)");
         TableBuilder recibidos = new TableBuilder("recibidos", "id_cliente VARCHAR(8)," +
-                                                               "id_telefono VARCHAR(10)");
-        TableBuilder telefonos = new TableBuilder("telefonos", "id_telefono VARCHAR(10)," +
+                                                               "id_telefono VARCHAR(4)");
+        TableBuilder telefonos = new TableBuilder("telefonos", "id_telefono VARCHAR(4)," +
                                                                "modelo VARCHAR(40)," +
                                                                "descripcion TEXT," +
                                                                "fecha_llegada DATETIME," +
-                                                               "id_problema VARCHAR(14)," +
+                                                               "id_problema VARCHAR(6)," +
                                                                "armado BOOLEAN," +
                                                                "imei VARCHAR(15)," +
                                                                "contrasena VARCHAR(40)");
-        TableBuilder problemas = new TableBuilder("problemas", "id_problema VARCHAR(14)," +
+        TableBuilder problemas = new TableBuilder("problemas", "id_problema VARCHAR(6)," +
                                                                "nombre VARCHAR(40)," +
                                                                "costo DOUBLE," +
                                                                "id_estado VARCHAR(5)," +
                                                                "fecha_solucion DATETIME");
-        TableBuilder historial = new TableBuilder("historial", "id_telefono VARCHAR(10)," +
-                                                               "id_problema VARCHAR(14)");
-        TableBuilder pendientes = new TableBuilder("pendientes", "id_pendientes varchar(8)," +
+        TableBuilder historial = new TableBuilder("historial", "id_telefono VARCHAR(4)," +
+                                                               "id_problema VARCHAR(6)");
+        TableBuilder pendientes = new TableBuilder("pendientes", "id_pendientes varchar(5)," +
                                                                  "descripcion TEXT," +
                                                                  "fecha_registro DATETIME");
         TableBuilder pedidos = new TableBuilder("pedidos", "id_cliente VARCHAR(8)," +
-                                                           "id_pedido VARCHAR(8)," +
+                                                           "id_pedido VARCHAR(6)," +
                                                            "pieza VARCHAR(40)," +
                                                            "costo DOUBLE," +
                                                            "pedido BOOLEAN," +
                                                            "fecha_pedido DATETIME," +
                                                            "fecha_registro DATETIME");
+        TableBuilder contadores = new TableBuilder("contadores","id_cliente INT," +
+                                                          "id_telefono INT," +
+                                                          "id_problema INT," +
+                                                          "id_pendiente INT,"+
+                                                          "id_pedido INT");
+        TableBuilder empleados = new TableBuilder("empleados", "usuario VARCHAR(4)," +
+                                                              "contrasena VARCHAR(4)," +
+                                                              "nombre VARCHAR(50)," +
+                                                              "telefono VARCHAR(14)," +
+                                                              "correo VARCHAR(40)," +
+                                                              "direccion VARCHAR(40)");
         #endregion
-         
+
         MySqlConnection miConexion;
 
         bool blConexionEstablecida = false;
@@ -65,6 +76,9 @@ namespace iS_Repair.Clases.DataBase
             Ejecutar(historial.QueryTable());
             Ejecutar(pendientes.QueryTable());
             Ejecutar(pedidos.QueryTable());
+            Ejecutar(contadores.QueryTable());
+            Ejecutar(empleados.QueryTable());
+
         }
 
         public void Abrir()
@@ -371,5 +385,72 @@ namespace iS_Repair.Clases.DataBase
             Ejecutar(cmd);
         }
         #endregion
+
+        #region CONTADORES
+        public Contadores Contadores()
+        {
+            Contadores cnt = null;
+            DataTable tabla = Tabla(clientes);
+
+            foreach (DataRow item in tabla.Rows)
+            {
+                cnt = new Contadores((int)item[0],
+                    (int)item[1],
+                    (int)item[2],
+                    (int)item[3],
+                    (int)item[4]);
+                return cnt;
+            }
+            
+            return new Contadores(1,1,1,1,1);
+        }
+        void AgregarContadores(Contadores contador)
+        {
+            MySqlCommand cmd = new MySqlCommand(contadores.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@id_cliente", contador.Id_Cliente);
+            cmd.Parameters.AddWithValue("@id_telefono", contador.Id_Telefono);
+            cmd.Parameters.AddWithValue("@id_problema", contador.Id_Problema);
+            cmd.Parameters.AddWithValue("@id_pendiente", contador.Id_Pendiente);
+            cmd.Parameters.AddWithValue("@id_pedido", contador.Id_Pedido);
+            Ejecutar(cmd);
+        }
+        #endregion
+
+        #region EMPLEADOS
+        public IEnumerable<Empleado> Empleados()
+        {
+            DataTable tabla = Tabla(empleados);
+            foreach (DataRow item in tabla.Rows)
+            {
+                Empleado empleado = new Empleado();
+                empleado.Usuario = (int) item[0];
+                empleado.Contrasena = (int) item[1];
+                empleado.Nombre = item[2].ToString();
+                empleado.Telefono = item[3].ToString();
+                empleado.Correo = item[4].ToString();
+                empleado.Direccion = item[5].ToString();
+                yield return empleado;
+            }
+            yield break;
+        }
+        public void AgregarEmpleado(Empleado miEmpleado)
+        {
+            MySqlCommand cmd = new MySqlCommand(empleados.QueryInsert(), miConexion);
+            cmd.Parameters.AddWithValue("@usuario", miEmpleado.Usuario);
+            cmd.Parameters.AddWithValue("@contrasena", miEmpleado.Contrasena);
+            cmd.Parameters.AddWithValue("@nombre", miEmpleado.Nombre);
+            cmd.Parameters.AddWithValue("@telefono", miEmpleado.Telefono);
+            cmd.Parameters.AddWithValue("@correo", miEmpleado.Correo);
+            cmd.Parameters.AddWithValue("@direccion", miEmpleado.Direccion);
+            Ejecutar(cmd);
+        }
+        public void EliminarEmpleado(string usuario)
+        {
+            MySqlCommand cmd = new MySqlCommand(empleados.QueryDelete("usuario=@usuario"), miConexion);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+            Ejecutar(cmd);
+        }
+        #endregion
+
     }
 }
