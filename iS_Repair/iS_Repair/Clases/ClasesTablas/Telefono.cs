@@ -72,5 +72,11 @@ namespace iS_Repair.Clases.ClasesTablas
             set { _strContrasena = value; }
         }
 
+        private short _intRango;
+
+        public short Rango {
+            get { return _intRango; }
+            set { _intRango = value; }
+        }
     }
 }

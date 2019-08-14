@@ -130,6 +130,7 @@ namespace iS_Repair
             pnContenido.Controls.Clear();
             pestaña.Dock = DockStyle.Fill;
             contActual = pestaña;
+            contActual.BackColor = System.Drawing.Color.FromArgb(16777215);
             pnContenido.Controls.Add(contActual);
         }
 

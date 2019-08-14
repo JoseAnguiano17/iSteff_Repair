@@ -72,6 +72,7 @@
             // 
             // pnContenido
             // 
+            this.pnContenido.BackColor = System.Drawing.Color.White;
             this.pnContenido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContenido.Location = new System.Drawing.Point(0, 113);

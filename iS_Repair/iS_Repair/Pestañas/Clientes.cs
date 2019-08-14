@@ -36,30 +36,34 @@ namespace iS_Repair.Pestañas
         {
             if(MainForm.ActiveForm.WindowState == FormWindowState.Maximized)
             {
-                dgvClientes.Width = (int)(pnContenido.Width * .77);
+                cardDatosCLiente.Location = new Point(pnTop.Width / 3, cardDatosCLiente.Location.Y); 
             } else{
-                dgvClientes.Width = (int)(pnContenido.Width * .7);
+
+                cardDatosCLiente.Location = new Point((int)(pnTop.Width / 3.5), cardDatosCLiente.Location.Y);
             }
-            sepDivisor.Width = (int)(pnContenido.Width * .95);
-            dgvClientes.Height = (int)(pnContenido.Height * .9);
-            pnlFiltros.Height = (int)(pnContenido.Height * .8);
-        }
-
-        private void TxtFiltroID_OnValueChanged(object sender, EventArgs e)
-        {
-
+            sepDivisor.Width = (int)(pnContenido.Width * .96);
         }
 
         private void btnDownTopPanel_Click(object sender, EventArgs e)
         {
             if(pnTop.Height <= 50)
             {
-                pnTop.Height = cardDatosCLiente.Height + sepDivisor.Height + 50;
+                pnTop.Height = cardDatosCLiente.Height + sepDivisor.Height + 60;
             }
             else
             {
                 pnTop.Height = 50;
             }
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            pbBuscar.Visible = false;
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            pbBuscar.Visible = true;
         }
     }
 }

@@ -20,7 +20,8 @@ namespace iS_Repair.Clases.DataBase
                                                                "id_problema VARCHAR(6)," +
                                                                "armado BOOLEAN," +
                                                                "imei VARCHAR(15)," +
-                                                               "contrasena VARCHAR(40)");
+                                                               "contrasena VARCHAR(40),"+
+                                                               "rango TINYINT");
         TableBuilder problemas = new TableBuilder("problemas", "id_problema VARCHAR(6)," +
                                                                "nombre VARCHAR(40)," +
                                                                "costo DOUBLE," +
@@ -133,10 +134,19 @@ namespace iS_Repair.Clases.DataBase
 
         DataTable Tabla(TableBuilder obj)
         {
-            return Tabla(obj, obj.QuerySelect("*"));
+            return Tabla(obj.QuerySelect("*"));
         }
 
-        DataTable Tabla(TableBuilder obj, string querySelect)
+        DataTable Tabla(TableBuilder obj,string fields,string where)
+        {
+            if(where == "")
+            {
+                return Tabla(obj.QuerySelect(fields));
+            }
+            return Tabla(obj.QuerySelect(fields,where));
+        }
+
+        DataTable Tabla(string querySelect)
         {
             Abrir();
             MySqlCommand cmd = new MySqlCommand(querySelect, miConexion);
@@ -151,7 +161,15 @@ namespace iS_Repair.Clases.DataBase
         #region CLIENTES
         public IEnumerable<Cliente> Clientes()
         {
-            DataTable tabla = Tabla(clientes);
+            return Clientes("*","");
+        }
+        public IEnumerable<Cliente> Clientes(string fields)
+        {
+            return Clientes(fields, "");
+        }
+        public IEnumerable<Cliente> Clientes(string fields, string where)
+        {
+            DataTable tabla = Tabla(clientes,fields,where);
 
             foreach (DataRow item in tabla.Rows)
             {
@@ -361,6 +379,7 @@ namespace iS_Repair.Clases.DataBase
                 telefono.Armado = (bool)item[5];
                 telefono.Imei = item[6].ToString();
                 telefono.Contrasena = item[7].ToString();
+                telefono.Rango = (short)item[8];
                 yield return telefono;
             }
             yield break;
@@ -376,6 +395,7 @@ namespace iS_Repair.Clases.DataBase
             cmd.Parameters.AddWithValue("@armado", miTelefono.Armado);
             cmd.Parameters.AddWithValue("@imei", miTelefono.Imei);
             cmd.Parameters.AddWithValue("@contrasena", miTelefono.Contrasena);
+            cmd.Parameters.AddWithValue("@rango", miTelefono.Rango);
             Ejecutar(cmd);
         }
         public void EliminarTelefono(string id_telefono)
