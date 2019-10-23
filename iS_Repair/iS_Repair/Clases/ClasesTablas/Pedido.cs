@@ -8,19 +8,31 @@ namespace iS_Repair.Clases.ClasesTablas
 {
     public class Pedido
     {
-        private string _strIdCliente;
-
-        public string IdCliente
+        public Pedido(int intID, string strPieza, double dlbCosto, bool blnPedido, DateTime dtmFechaP, DateTime dtmFechaR, int intIDC, string strUsuario)
         {
-            get { return _strIdCliente; }
-            set { _strIdCliente = value; }
+            ID = intID;
+            Pieza = strPieza;
+            Costo = _dblCosto;
+            YaPedido = blnPedido;
+            FechaPedido = dtmFechaP;
+            FechaRegistro = dtmFechaR;
+            IDCliente = intIDC;
+            Usuario = strUsuario;
         }
 
-        private string _idPedido;
+        private int _intIdCliente;
 
-        public string IdPedido {
-            get { return _idPedido; }
-            set { _idPedido = value; }
+        public int IDCliente
+        {
+            get { return _intIdCliente; }
+            set { _intIdCliente = value; }
+        }
+
+        private int _intId;
+
+        public int ID {
+            get { return _intId; }
+            set { _intId = value; }
         }
 
         private string _strPieza;
@@ -41,7 +53,7 @@ namespace iS_Repair.Clases.ClasesTablas
 
         private bool _blnPedido;
 
-        public bool EsPedido
+        public bool YaPedido
         {
             get { return _blnPedido; }
             set { _blnPedido = value; }
@@ -62,5 +74,14 @@ namespace iS_Repair.Clases.ClasesTablas
             get { return _dtmFechaRegistro; }
             set { _dtmFechaRegistro = value; }
         }
+
+        private string _strUsuario;
+
+        public string Usuario
+        {
+            get { return _strUsuario; }
+            set { _strUsuario = value; }
+        }
+
     }
 }

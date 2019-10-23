@@ -8,12 +8,12 @@ namespace iS_Repair.Clases.ClasesTablas
 {
     public class Telefono
     {
-        private string _strIdTelefono;
+        private int _intID;
 
-        public string IdTelefono
+        public int ID
         {
-            get { return _strIdTelefono; }
-            set { _strIdTelefono = value; }
+            get { return _intID; }
+            set { _intID = value; }
         }
 
         private string _strDescripcion;
@@ -40,12 +40,20 @@ namespace iS_Repair.Clases.ClasesTablas
             set { _dtmFechaLlegada = value; }
         }
 
-        private string _strIdProblema;
+        private int _intIDCliente;
 
-        public string IdProblema
+        public int IDCliente
         {
-            get { return _strIdProblema; }
-            set { _strIdProblema = value; }
+            get { return _intIDCliente; }
+            set { _intIDCliente = value; }
+        }
+
+        private Int16 _intIDEstado;
+
+        public Int16 IDEstado
+        {
+            get { return _intIDEstado; }
+            set { _intIDEstado = value; }
         }
 
         private bool _blnArmado;
@@ -58,7 +66,7 @@ namespace iS_Repair.Clases.ClasesTablas
 
         private string _strImei;
 
-        public string Imei
+        public string IMEI
         {
             get { return _strImei; }
             set { _strImei = value; }
@@ -72,11 +80,25 @@ namespace iS_Repair.Clases.ClasesTablas
             set { _strContrasena = value; }
         }
 
-        private short _intRango;
+        private char _chrRango;
 
-        public short Rango {
-            get { return _intRango; }
-            set { _intRango = value; }
+        public char Rango {
+            get { return _chrRango; }
+            set { _chrRango = value; }
+        }
+
+        public Telefono(int intID, string strModelo, string strDescrip, bool blnArmado, string strIMEI, string strContrasena, char chrRango, DateTime dtmFechaL, Int16 intIDE, int intIDC)
+        {
+            ID = intID;
+            Modelo = strModelo;
+            Descripcion = strDescrip;
+            Armado = blnArmado;
+            IMEI = strIMEI;
+            Contrasena = strContrasena;
+            Rango = chrRango;
+            FechaLlegada = dtmFechaL;
+            IDEstado = intIDE;
+            IDCliente = intIDC;
         }
     }
 }

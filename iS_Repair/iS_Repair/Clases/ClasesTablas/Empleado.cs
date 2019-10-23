@@ -8,18 +8,18 @@ namespace iS_Repair.Clases.ClasesTablas
 {
     public class Empleado
     {
-        private int _intUsuario;
+        private string _strUsuario;
 
-        public int Usuario {
-            get { return _intUsuario; }
-            set { _intUsuario = value; }
+        public string Usuario {
+            get { return _strUsuario; }
+            set { _strUsuario = value; }
         }
 
-        private int _intContrasena;
+        private string _strContrasena;
 
-        public int Contrasena {
-            get { return _intContrasena; }
-            set { _intContrasena = value; }
+        public string Contrasena {
+            get { return _strContrasena; }
+            set { _strContrasena = value; }
         }
 
         private string _strNombre;
@@ -27,6 +27,22 @@ namespace iS_Repair.Clases.ClasesTablas
         public string Nombre {
             get { return _strNombre; }
             set { _strNombre = value; }
+        }
+
+        private string _strApellidoP;
+
+        public string ApellidoP
+        {
+            get { return _strApellidoP; }
+            set { _strApellidoP = value; }
+        }
+
+        private string _strApellidoM;
+
+        public string ApellidoM
+        {
+            get { return _strApellidoM; }
+            set { _strApellidoM = value; }
         }
 
         private string _strTelefono;
@@ -50,5 +66,16 @@ namespace iS_Repair.Clases.ClasesTablas
             set { _strDireccion = value; }
         }
 
+        public Empleado(string strUsuario, string strContrasena, string strNombre, string strAPP, string strAM, string strTel, string strCorreo, string strDir)
+        {
+            Usuario = strUsuario;
+            Contrasena = strContrasena;
+            Nombre = strNombre;
+            ApellidoP = strAPP;
+            ApellidoM = strAM;
+            Telefono = strTel;
+            Correo = strCorreo;
+            Direccion = strDir;
+        }
     }
 }

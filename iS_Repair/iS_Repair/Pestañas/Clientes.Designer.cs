@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.dgvClientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cardDatosCLiente = new Bunifu.Framework.UI.BunifuCards();
             this.btnRegistrar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -52,8 +54,8 @@
             this.pnContenido = new System.Windows.Forms.Panel();
             this.pnContIzq = new System.Windows.Forms.Panel();
             this.btnBuscar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pbBuscar = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.pbBuscar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.cardDatosCLiente.SuspendLayout();
             this.pnTop.SuspendLayout();
@@ -69,34 +71,36 @@
             this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.AllowUserToResizeColumns = false;
             this.dgvClientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvClientes.ColumnHeadersHeight = 30;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre,
-            this.NoTelefono});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ApellidoP,
+            this.ApellidoM,
+            this.NumTelefono});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvClientes.DoubleBuffered = true;
             this.dgvClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -104,28 +108,28 @@
             this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.dgvClientes.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.dgvClientes.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvClientes.Location = new System.Drawing.Point(202, 0);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvClientes.Location = new System.Drawing.Point(269, 0);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvClientes.MultiSelect = false;
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.RowHeadersWidth = 60;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvClientes.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvClientes.RowTemplate.Height = 30;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(769, 630);
+            this.dgvClientes.Size = new System.Drawing.Size(1026, 775);
             this.dgvClientes.TabIndex = 1;
             // 
             // ID
@@ -145,12 +149,26 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // NoTelefono
+            // ApellidoP
             // 
-            this.NoTelefono.HeaderText = "No. Teléfono";
-            this.NoTelefono.MinimumWidth = 6;
-            this.NoTelefono.Name = "NoTelefono";
-            this.NoTelefono.ReadOnly = true;
+            this.ApellidoP.HeaderText = "Apellido P.";
+            this.ApellidoP.MinimumWidth = 6;
+            this.ApellidoP.Name = "ApellidoP";
+            this.ApellidoP.ReadOnly = true;
+            // 
+            // ApellidoM
+            // 
+            this.ApellidoM.HeaderText = "Apellido M.";
+            this.ApellidoM.MinimumWidth = 6;
+            this.ApellidoM.Name = "ApellidoM";
+            this.ApellidoM.ReadOnly = true;
+            // 
+            // NumTelefono
+            // 
+            this.NumTelefono.HeaderText = "# Teléfono";
+            this.NumTelefono.MinimumWidth = 6;
+            this.NumTelefono.Name = "NumTelefono";
+            this.NumTelefono.ReadOnly = true;
             // 
             // cardDatosCLiente
             // 
@@ -165,12 +183,12 @@
             this.cardDatosCLiente.Controls.Add(this.bunifuCustomLabel2);
             this.cardDatosCLiente.Controls.Add(this.bunifuMaterialTextbox1);
             this.cardDatosCLiente.LeftSahddow = false;
-            this.cardDatosCLiente.Location = new System.Drawing.Point(22, 59);
-            this.cardDatosCLiente.Margin = new System.Windows.Forms.Padding(2);
+            this.cardDatosCLiente.Location = new System.Drawing.Point(29, 73);
+            this.cardDatosCLiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cardDatosCLiente.Name = "cardDatosCLiente";
             this.cardDatosCLiente.RightSahddow = true;
             this.cardDatosCLiente.ShadowDepth = 20;
-            this.cardDatosCLiente.Size = new System.Drawing.Size(463, 208);
+            this.cardDatosCLiente.Size = new System.Drawing.Size(617, 256);
             this.cardDatosCLiente.TabIndex = 12;
             // 
             // btnRegistrar
@@ -191,10 +209,10 @@
             this.btnRegistrar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(80)))), ((int)(((byte)(219)))));
             this.btnRegistrar.IdleForecolor = System.Drawing.Color.White;
             this.btnRegistrar.IdleLineColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.Location = new System.Drawing.Point(170, 165);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnRegistrar.Location = new System.Drawing.Point(227, 203);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(124, 38);
+            this.btnRegistrar.Size = new System.Drawing.Size(165, 47);
             this.btnRegistrar.TabIndex = 16;
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -203,10 +221,9 @@
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(169, 9);
-            this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(225, 11);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(126, 23);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(154, 28);
             this.bunifuCustomLabel4.TabIndex = 15;
             this.bunifuCustomLabel4.Text = "ID: 19100000";
             // 
@@ -215,10 +232,9 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(178, 108);
-            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(237, 133);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(108, 19);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(139, 23);
             this.bunifuCustomLabel3.TabIndex = 14;
             this.bunifuCustomLabel3.Text = "No. Teléfono:";
             // 
@@ -235,10 +251,10 @@
             this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(80)))), ((int)(((byte)(219)))));
             this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.bunifuMaterialTextbox2.LineThickness = 4;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(151, 126);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(201, 155);
+            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(162, 38);
+            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(216, 47);
             this.bunifuMaterialTextbox2.TabIndex = 13;
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -247,10 +263,9 @@
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(194, 37);
-            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(259, 46);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(77, 19);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(95, 23);
             this.bunifuCustomLabel2.TabIndex = 12;
             this.bunifuCustomLabel2.Text = "Nombre:";
             // 
@@ -267,10 +282,10 @@
             this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(80)))), ((int)(((byte)(219)))));
             this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.bunifuMaterialTextbox1.LineThickness = 4;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(49, 61);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(65, 75);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(367, 40);
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(489, 49);
             this.bunifuMaterialTextbox1.TabIndex = 1;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -279,10 +294,10 @@
             this.sepDivisor.BackColor = System.Drawing.Color.Transparent;
             this.sepDivisor.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.sepDivisor.LineThickness = 5;
-            this.sepDivisor.Location = new System.Drawing.Point(22, 269);
-            this.sepDivisor.Margin = new System.Windows.Forms.Padding(4);
+            this.sepDivisor.Location = new System.Drawing.Point(29, 331);
+            this.sepDivisor.Margin = new System.Windows.Forms.Padding(5);
             this.sepDivisor.Name = "sepDivisor";
-            this.sepDivisor.Size = new System.Drawing.Size(926, 23);
+            this.sepDivisor.Size = new System.Drawing.Size(1235, 28);
             this.sepDivisor.TabIndex = 13;
             this.sepDivisor.Transparency = 255;
             this.sepDivisor.Vertical = false;
@@ -292,10 +307,9 @@
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(61, 10);
-            this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(81, 12);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(193, 30);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(247, 37);
             this.bunifuCustomLabel5.TabIndex = 15;
             this.bunifuCustomLabel5.Text = "Registro de clientes";
             // 
@@ -308,8 +322,9 @@
             this.pnTop.Controls.Add(this.sepDivisor);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Margin = new System.Windows.Forms.Padding(4);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(971, 50);
+            this.pnTop.Size = new System.Drawing.Size(1295, 62);
             this.pnTop.TabIndex = 16;
             // 
             // btnDownTopPanel
@@ -317,9 +332,10 @@
             this.btnDownTopPanel.BackColor = System.Drawing.Color.Transparent;
             this.btnDownTopPanel.Image = global::iS_Repair.Properties.Resources.teclado;
             this.btnDownTopPanel.ImageActive = null;
-            this.btnDownTopPanel.Location = new System.Drawing.Point(22, 10);
+            this.btnDownTopPanel.Location = new System.Drawing.Point(29, 12);
+            this.btnDownTopPanel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDownTopPanel.Name = "btnDownTopPanel";
-            this.btnDownTopPanel.Size = new System.Drawing.Size(34, 33);
+            this.btnDownTopPanel.Size = new System.Drawing.Size(45, 41);
             this.btnDownTopPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDownTopPanel.TabIndex = 14;
             this.btnDownTopPanel.TabStop = false;
@@ -331,9 +347,10 @@
             this.pnContenido.Controls.Add(this.dgvClientes);
             this.pnContenido.Controls.Add(this.pnContIzq);
             this.pnContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContenido.Location = new System.Drawing.Point(0, 50);
+            this.pnContenido.Location = new System.Drawing.Point(0, 62);
+            this.pnContenido.Margin = new System.Windows.Forms.Padding(4);
             this.pnContenido.Name = "pnContenido";
-            this.pnContenido.Size = new System.Drawing.Size(971, 630);
+            this.pnContenido.Size = new System.Drawing.Size(1295, 775);
             this.pnContenido.TabIndex = 17;
             // 
             // pnContIzq
@@ -345,8 +362,9 @@
             this.pnContIzq.Controls.Add(this.txtBuscar);
             this.pnContIzq.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnContIzq.Location = new System.Drawing.Point(0, 0);
+            this.pnContIzq.Margin = new System.Windows.Forms.Padding(4);
             this.pnContIzq.Name = "pnContIzq";
-            this.pnContIzq.Size = new System.Drawing.Size(202, 630);
+            this.pnContIzq.Size = new System.Drawing.Size(269, 775);
             this.pnContIzq.TabIndex = 4;
             // 
             // btnBuscar
@@ -370,28 +388,19 @@
             this.btnBuscar.IconVisible = false;
             this.btnBuscar.IconZoom = 90D;
             this.btnBuscar.IsTab = false;
-            this.btnBuscar.Location = new System.Drawing.Point(127, 20);
+            this.btnBuscar.Location = new System.Drawing.Point(169, 25);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.btnBuscar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.btnBuscar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnBuscar.selected = false;
-            this.btnBuscar.Size = new System.Drawing.Size(63, 39);
+            this.btnBuscar.Size = new System.Drawing.Size(84, 49);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBuscar.Textcolor = System.Drawing.Color.White;
             this.btnBuscar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // pbBuscar
-            // 
-            this.pbBuscar.Image = global::iS_Repair.Properties.Resources.search;
-            this.pbBuscar.Location = new System.Drawing.Point(16, 25);
-            this.pbBuscar.Name = "pbBuscar";
-            this.pbBuscar.Size = new System.Drawing.Size(33, 29);
-            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBuscar.TabIndex = 5;
-            this.pbBuscar.TabStop = false;
             // 
             // txtBuscar
             // 
@@ -403,23 +412,33 @@
             this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtBuscar.isPassword = false;
-            this.txtBuscar.Location = new System.Drawing.Point(8, 19);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtBuscar.Location = new System.Drawing.Point(7, 25);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(120, 40);
-            this.txtBuscar.TabIndex = 4;
+            this.txtBuscar.Size = new System.Drawing.Size(160, 49);
+            this.txtBuscar.TabIndex = 7;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
-            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
+            // 
+            // pbBuscar
+            // 
+            this.pbBuscar.Image = global::iS_Repair.Properties.Resources.search;
+            this.pbBuscar.Location = new System.Drawing.Point(21, 31);
+            this.pbBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.pbBuscar.Name = "pbBuscar";
+            this.pbBuscar.Size = new System.Drawing.Size(44, 36);
+            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBuscar.TabIndex = 5;
+            this.pbBuscar.TabStop = false;
             // 
             // Clientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnContenido);
             this.Controls.Add(this.pnTop);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Clientes";
-            this.Size = new System.Drawing.Size(971, 680);
+            this.Size = new System.Drawing.Size(1295, 837);
             this.SizeChanged += new System.EventHandler(this.Clientes_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.cardDatosCLiente.ResumeLayout(false);
@@ -449,11 +468,13 @@
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Panel pnContenido;
         private System.Windows.Forms.Panel pnContIzq;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtBuscar;
         private Bunifu.Framework.UI.BunifuFlatButton btnBuscar;
-        private System.Windows.Forms.PictureBox pbBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoTelefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumTelefono;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtBuscar;
+        private System.Windows.Forms.PictureBox pbBuscar;
     }
 }

@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace iS_Repair.Clases.ClasesTablas
 {
-    public class Problema
+    public class Estado
     {
+        public Estado(Int16 intID, string strNombre, string strDescrip, int intColor)
+        {
+            ID = intID;
+            Nombre = strNombre;
+            Descripcion = strDescrip;
+            Color = intColor;
+        }
+
         private Int16 _intId;
 
         public Int16 ID
@@ -16,12 +24,12 @@ namespace iS_Repair.Clases.ClasesTablas
             set { _intId = value; }
         }
 
-        private double _dblCosto;
+        private string _strNombre;
 
-        public double Costo
+        public string Nombre
         {
-            get { return _dblCosto; }
-            set { _dblCosto = value; }
+            get { return _strNombre; }
+            set { _strNombre = value; }
         }
 
         private string _strDescripcion;
@@ -32,11 +40,12 @@ namespace iS_Repair.Clases.ClasesTablas
             set { _strDescripcion = value; }
         }
 
-        public Problema(Int16 intID, string strDescrip, double dblCosto)
+        private int _intColor;
+
+        public int Color
         {
-            ID = intID;
-            Descripcion = strDescrip;
-            Costo = dblCosto;
+            get { return _intColor; }
+            set { _intColor = value; }
         }
     }
 }

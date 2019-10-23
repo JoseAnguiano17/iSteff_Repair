@@ -8,12 +8,12 @@ namespace iS_Repair.Clases.ClasesTablas
 {
     public class Pendiente
     {
-        private string _strId;
+        private int _intId;
 
-        public string Id
+        public int ID
         {
-            get { return _strId; }
-            set { _strId = value; }
+            get { return _intId; }
+            set { _intId = value; }
         }
 
         private string _strDescripcion;
@@ -30,6 +30,22 @@ namespace iS_Repair.Clases.ClasesTablas
         {
             get { return _dtmFechaRegistro; }
             set { _dtmFechaRegistro = value; }
+        }
+
+        private string _strUsuario;
+
+        public string Usuario
+        {
+            get { return _strUsuario; }
+            set { _strUsuario = value; }
+        }
+
+        public Pendiente(int intID, string strDescrip, DateTime dtmFechaR, string strUsuario)
+        {
+            ID = intID;
+            Descripcion = strDescrip;
+            FechaRegistro = dtmFechaR;
+            Usuario = strUsuario;
         }
     }
 }

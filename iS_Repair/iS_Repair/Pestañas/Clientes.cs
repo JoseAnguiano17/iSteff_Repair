@@ -8,17 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using iS_Repair.Clases;
+using System.Data.SqlClient;
+using iS_Repair.Clases.DataBase;
 
 namespace iS_Repair.Pestañas
 {
     public partial class Clientes : UserControl
     {
-        MainForm origen;
-
-        public Clientes(MainForm origen)
+        public Clientes()
         {
             InitializeComponent();
-            this.origen = origen;
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ActualizarDGV();
         }
@@ -26,9 +25,9 @@ namespace iS_Repair.Pestañas
         void ActualizarDGV()
         {
             dgvClientes.Rows.Clear();
-            foreach (Cliente item in origen.DataBase.Clientes())
+            foreach (Cliente cliente in ConexionBD.CargarClientes())
             {
-                dgvClientes.Rows.Add(item.ID, item.Nombre, item.NumeroTelefono);
+                dgvClientes.Rows.Add(cliente.ID, cliente.Nombre, cliente.ApellidoP, cliente.ApellidoM, cliente.NumeroTelefono);
             }
         }
 

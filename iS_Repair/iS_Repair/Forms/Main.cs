@@ -4,15 +4,13 @@ using iS_Repair.Clases.Utils;
 using iS_Repair.Forms;
 using iS_Repair.Pestañas;
 using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace iS_Repair
 {
     public partial class MainForm : Form
     {
-        DB myDataBase;
-        Archivo<DataHost> ArchivoServer = new Archivo<DataHost>("Host.dat");
-        DataHost dh = null;
         UserControl contActual;
         int xClick = 0, yClick = 0;
 
@@ -20,40 +18,7 @@ namespace iS_Repair
         {
             InitializeComponent();
             this.Height = Screen.PrimaryScreen.WorkingArea.Height;
-            foreach (DataHost item in ArchivoServer.LeerObjetos())
-            {
-                dh = item;
-            }
-
-            if (dh != null)
-            {
-                ConectarDB(dh);
-            } else
-            {
-                MessageUtil.Error("No hay base de datos guardada.");
-            }
-        }
-
-        public DB DataBase {
-            get { return myDataBase; }
-        }
-
-        public void ConectarDB(DataHost dh)
-        {
-            try
-            {
-                if (dh != null)
-                {
-                    this.dh = dh;
-                    myDataBase = dh.getDataBase();
-                    btnDBCon.Image = Properties.Resources.database_conectado;
-                }
-            }
-            catch (Exception x)
-            {
-                btnDBCon.Image = Properties.Resources.database_error;
-                MessageUtil.Error(x.Message);
-            }
+            SqlConnection con = ConexionBD.ObtenerConexion();
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -102,16 +67,17 @@ namespace iS_Repair
         }
 
         private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
+        {/*
             if (e.Control && e.KeyCode== (Keys.D))
             {
                 new ServerManager(ref ArchivoServer,ref dh,this).Show();
             }
+            */
         }
 
         private void btnDBCon_Click(object sender, EventArgs e)
         {
-                new ServerManager(ref ArchivoServer, ref dh, this).Show();
+            /*new ServerManager(ref ArchivoServer, ref dh, this).Show();*/
         }
 
         private void pnAjustar_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -138,7 +104,7 @@ namespace iS_Repair
         {
             if(! (contActual is Telefonos))
             {
-                CambiarContenido(new Telefonos(this));
+                CambiarContenido(new Telefonos());
             }
         }
 
@@ -146,7 +112,7 @@ namespace iS_Repair
         {
             if (!(contActual is Pendientes))
             {
-                CambiarContenido(new Pendientes(this));
+                CambiarContenido(new Pendientes());
             }
         }
 
@@ -154,7 +120,7 @@ namespace iS_Repair
         {
             if (!(contActual is Pedidos))
             {
-                CambiarContenido(new Pedidos(this));
+                CambiarContenido(new Pedidos());
             }
         }
 
@@ -162,7 +128,7 @@ namespace iS_Repair
         {
             if (!(contActual is Clientes))
             {
-                CambiarContenido(new Clientes(this));
+                CambiarContenido(new Clientes());
             }
         }
 

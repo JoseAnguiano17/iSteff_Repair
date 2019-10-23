@@ -12,12 +12,9 @@ namespace iS_Repair.Pestañas
 {
     public partial class Pendientes : UserControl
     {
-        MainForm origen;
-
-        public Pendientes(MainForm origen)
+        public Pendientes()
         {
             InitializeComponent();
-            this.origen = origen;
         }
     }
 }
