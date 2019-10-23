@@ -40,6 +40,7 @@ namespace iS_Repair.Clases.DataBase
         {
             List<SqlConnection> sqlLista = new List<SqlConnection>();
             sqlLista.Add(new SqlConnection(CrearCadenaConexion("Maro", "")));
+            sqlLista.Add(new SqlConnection(CrearCadenaConexion("ANGUIANO-PC", "SERVER")));
             return sqlLista;
         }
 
