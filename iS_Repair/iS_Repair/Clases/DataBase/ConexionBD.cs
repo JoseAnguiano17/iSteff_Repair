@@ -1,7 +1,9 @@
 ﻿using iS_Repair.Clases.ClasesTablas;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +42,7 @@ namespace iS_Repair.Clases.DataBase
         {
             List<SqlConnection> sqlLista = new List<SqlConnection>();
             sqlLista.Add(new SqlConnection(CrearCadenaConexion("Maro", "")));
+            sqlLista.Add(new SqlConnection(CrearCadenaConexion("ANGUIANO-PC", "SERVER")));
             return sqlLista;
         }
 
@@ -103,10 +106,23 @@ namespace iS_Repair.Clases.DataBase
             using (SqlConnection con = ObtenerConexion())
             {
                 SqlCommand comando = new SqlCommand("SELECT * FROM PEDIDO", con);
-                SqlDataReader Pedidos = comando.ExecuteReader();
-                while (Pedidos.Read())
+                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                adaptador.Dispose();
+                comando.Dispose();
+                foreach (DataRow row in tabla.Rows)
                 {
-                    listaPedidos.Add(new Pedido(Pedidos.GetInt32(0), Pedidos.GetString(1), double.Parse(Pedidos.GetSqlMoney(2).ToString()), Pedidos.GetBoolean(3), Pedidos.GetDateTime(4), Pedidos.GetDateTime(5), Pedidos.GetInt32(6), Pedidos.GetString(7)));
+                    listaPedidos.Add(
+                        new Pedido(
+                        (int) row[0], 
+                        row[1].ToString(), 
+                        double.Parse(row[2].ToString()),
+                        (bool) row[3],
+                        (row[4] is DBNull) ? DateTime.MinValue : (DateTime)row[4],
+                        ((DateTime)row[5]),
+                        (int)row[6], 
+                        row[7].ToString()));
                 }
             }
             return listaPedidos;

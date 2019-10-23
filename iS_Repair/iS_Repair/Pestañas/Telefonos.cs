@@ -16,5 +16,16 @@ namespace iS_Repair.Pestañas
         {
             InitializeComponent();
         }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            pbBuscar.Visible = false;
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            pbBuscar.Visible = true;
+            txtBuscar.ResetText();
+        }
     }
 }

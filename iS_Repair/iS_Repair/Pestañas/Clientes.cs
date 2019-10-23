@@ -63,6 +63,7 @@ namespace iS_Repair.Pestañas
         private void txtBuscar_Leave(object sender, EventArgs e)
         {
             pbBuscar.Visible = true;
+            txtBuscar.ResetText();
         }
     }
 }
