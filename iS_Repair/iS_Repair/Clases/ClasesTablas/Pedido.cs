@@ -8,11 +8,11 @@ namespace iS_Repair.Clases.ClasesTablas
 {
     public class Pedido
     {
-        public Pedido(int intID, string strPieza, double dlbCosto, bool blnPedido, DateTime dtmFechaP, DateTime dtmFechaR, int intIDC, string strUsuario)
+        public Pedido(int intID, string strPieza, double dblCosto, bool blnPedido, DateTime dtmFechaP, DateTime dtmFechaR, int intIDC, string strUsuario)
         {
             ID = intID;
             Pieza = strPieza;
-            Costo = _dblCosto;
+            Costo = dblCosto;
             YaPedido = blnPedido;
             FechaPedido = dtmFechaP;
             FechaRegistro = dtmFechaR;

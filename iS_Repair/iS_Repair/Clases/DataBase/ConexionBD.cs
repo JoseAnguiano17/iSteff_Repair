@@ -63,6 +63,7 @@ namespace iS_Repair.Clases.DataBase
             }
             return listaClientes;
         }
+
         #endregion
         #region Empleado
         public static List<Empleado> CargarEmpleados()

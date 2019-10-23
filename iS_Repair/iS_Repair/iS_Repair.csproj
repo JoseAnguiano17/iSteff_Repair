@@ -71,6 +71,7 @@
     <Compile Include="Clases\ClasesTablas\Cliente.cs" />
     <Compile Include="Clases\ClasesTablas\Empleado.cs" />
     <Compile Include="Clases\ClasesTablas\Estado.cs" />
+    <Compile Include="Clases\ClasesTablas\Filtro.cs" />
     <Compile Include="Clases\ClasesTablas\Pedido.cs" />
     <Compile Include="Clases\ClasesTablas\Pendiente.cs" />
     <Compile Include="Clases\ClasesTablas\Problema.cs" />
