@@ -59,13 +59,29 @@ namespace iS_Repair.Clases.DataBase
                 SqlDataReader Clientes = comando.ExecuteReader();
                 while (Clientes.Read())
                 {
-                    listaClientes.Add(new Cliente(Clientes.GetInt32(0), Clientes.GetString(1), Clientes.GetString(2), Clientes.GetString(3), Clientes.GetString(4)));
+                    listaClientes.Add(new Cliente(Clientes.GetInt32(0), Clientes.GetString(1), 
+                        Clientes.GetString(2), Clientes.GetString(3), Clientes.GetString(4)));
                 }
+                Clientes.Close();
             }
             return listaClientes;
         }
 
+        public static void InsertarCliente(Cliente cliente)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO CLIENTE (NOMBRE, APELLIDOP, APELLIDOM, NUMTELEFONO)" +
+                                         " VALUES (@nombre, @apellidoP, @apellidom, @numtelefono)", con);
+                comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
+                comando.Parameters.AddWithValue("@apellidop", cliente.ApellidoP);
+                comando.Parameters.AddWithValue("@apellidom", cliente.ApellidoM);
+                comando.Parameters.AddWithValue("@numtelefono", cliente.NumeroTelefono);
+                comando.ExecuteNonQuery();
+            }
+        }
         #endregion
+        
         #region Empleado
         public static List<Empleado> CargarEmpleados()
         {
@@ -78,10 +94,32 @@ namespace iS_Repair.Clases.DataBase
                 {
                     listaEmpleados.Add(new Empleado(Empleados.GetString(0), Empleados.GetString(1), Empleados.GetString(2), Empleados.GetString(3), Empleados.GetString(4), Empleados.GetString(5), Empleados.GetString(6), Empleados.GetString(7)));
                 }
+                Empleados.Close();
             }
             return listaEmpleados;
         }
+
+        public static void InsertarEmpleado(Empleado emp)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO EMPLEADO (USUARIO, CONTRASENA, NOMBRE, APELLIDOP" +
+                                                    " APELLIDOM, NUMTELEFONO, CORREO, DIRECCION)" +
+                                         " VALUES (@usuario, @contrasena, @nombre, @apellidoP, @apellidom, @numtelefono" +
+                                         " @correo, @direccion)", con);
+                comando.Parameters.AddWithValue("@usuario", emp.Usuario);
+                comando.Parameters.AddWithValue("@contrasena", emp.Contrasena);
+                comando.Parameters.AddWithValue("@nombre", emp.Nombre);
+                comando.Parameters.AddWithValue("@apellidop", emp.ApellidoP);
+                comando.Parameters.AddWithValue("@apellidom", emp.ApellidoM);
+                comando.Parameters.AddWithValue("@numtelefono", emp.Telefono);
+                comando.Parameters.AddWithValue("@correo", emp.Correo);
+                comando.Parameters.AddWithValue("@direccion", emp.Direccion);
+                comando.ExecuteNonQuery();
+            }
+        }
         #endregion
+
         #region Estado
         public static List<Estado> CargarEstados()
         {
@@ -94,10 +132,25 @@ namespace iS_Repair.Clases.DataBase
                 {
                     listaEstados.Add(new Estado(Estados.GetInt16(0), Estados.GetString(1), Estados.GetString(2), Estados.GetInt32(3)));
                 }
+                Estados.Close();
             }
             return listaEstados;
         }
+
+        public static void InsertarEstado(Estado est)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO ESTADO (NOMBREESTADO, DESCRIPESTADO, COLOR)" +
+                                         " VALUES (@nombreestado, @descripestado, @color)", con);
+                comando.Parameters.AddWithValue("@nombreestado", est.Nombre);
+                comando.Parameters.AddWithValue("@descripestado", est.Descripcion);
+                comando.Parameters.AddWithValue("@color", est.Color);
+                comando.ExecuteNonQuery();
+            }
+        }
         #endregion
+
         #region Pedido
         public static List<Pedido> CargarPedidos()
         {
@@ -110,10 +163,30 @@ namespace iS_Repair.Clases.DataBase
                 {
                     listaPedidos.Add(new Pedido(Pedidos.GetInt32(0), Pedidos.GetString(1), double.Parse(Pedidos.GetSqlMoney(2).ToString()), Pedidos.GetBoolean(3), Pedidos.GetDateTime(4), Pedidos.GetDateTime(5), Pedidos.GetInt32(6), Pedidos.GetString(7)));
                 }
+                Pedidos.Close();
             }
             return listaPedidos;
         }
+
+        public static void InsertarPedido(Pedido pedido)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO PEDIDO (PIEZA, COSTO, YAPEDIDO" +
+                                                    " FECHAPEDIDO, FECHAREGISTRADO, IDCLIENTE, USUARIO)" +
+                                                    " VALUES (@pieza, @costo, @yapedido, @fechapedido, @fecharegistrado, @idcliente, @usuario)", con);
+                comando.Parameters.AddWithValue("@pieza", pedido.Pieza);
+                comando.Parameters.AddWithValue("@costo", pedido.Costo);
+                comando.Parameters.AddWithValue("@yapedido", pedido.YaPedido);
+                comando.Parameters.AddWithValue("@fechapedido", pedido.FechaPedido);
+                comando.Parameters.AddWithValue("@fecharegistrado", pedido.FechaRegistro);
+                comando.Parameters.AddWithValue("@idcliente", pedido.IDCliente);
+                comando.Parameters.AddWithValue("@usuario", pedido.Usuario);
+                comando.ExecuteNonQuery();
+            }
+        }
         #endregion
+        
         #region Pendiente
         public static List<Pendiente> CargarPendientes()
         {
@@ -126,10 +199,25 @@ namespace iS_Repair.Clases.DataBase
                 {
                     listaPendientes.Add(new Pendiente(Pendientes.GetInt32(0), Pendientes.GetString(1), Pendientes.GetDateTime(2), Pendientes.GetString(3)));
                 }
+                Pendientes.Close();
             }
             return listaPendientes;
         }
+
+        public static void InsertarPendiente(Pendiente pend)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO PENDIENTE (DESCRIPPENDIENTE, FECHAREGISTRO, USUARIO)"+
+                                                    " VALUES (@descrippendiente, @fecharegistro, @usuario)", con);
+                comando.Parameters.AddWithValue("@descrippendiente", pend.Descripcion);
+                comando.Parameters.AddWithValue("@fecharegistro", pend.FechaRegistro);
+                comando.Parameters.AddWithValue("@usuario", pend.Usuario);
+                comando.ExecuteNonQuery();
+            }
+        }
         #endregion
+
         #region Problema
         public static List<Problema> CargarProblemas()
         {
@@ -142,10 +230,24 @@ namespace iS_Repair.Clases.DataBase
                 {
                     listaProblemas.Add(new Problema(Problemas.GetInt16(0), Problemas.GetString(1), Problemas.GetDouble(2)));
                 }
+                Problemas.Close();
             }
             return listaProblemas;
         }
+
+        public static void InsertarProblema(Problema prob)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO PROBLEMA (DESCRIPPROBLEMA, COSTO)" +
+                                                    " VALUES (@descripproblema, @costo)", con);
+                comando.Parameters.AddWithValue("@descripproblema", prob.Descripcion);
+                comando.Parameters.AddWithValue("@costo", prob.Costo);
+                comando.ExecuteNonQuery();
+            }
+        }
         #endregion
+
         #region Telefono
         public static List<Telefono> CargarTelefonos()
         {
@@ -158,10 +260,33 @@ namespace iS_Repair.Clases.DataBase
                 {
                     listaTelefonos.Add(new Telefono(Telefonos.GetInt32(0), Telefonos.GetString(1), Telefonos.GetString(2), Telefonos.GetBoolean(3), Telefonos.GetString(4), Telefonos.GetString(5), char.Parse(Telefonos.GetString(6)), Telefonos.GetDateTime(7), Telefonos.GetInt16(8), Telefonos.GetInt32(9)));
                 }
+                Telefonos.Close();
             }
             return listaTelefonos;
         }
+
+        public static void InsertarTelefono(Telefono tel)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO TELEFONO (MODELO, DESCRIPTELEFONO, ARMADO" +
+                                                    " IMEI, CONTRASENA, RANGO, FECHALLEGADA, IDESTADO, IDCLIENTE)" +
+                                                    " VALUES (@modelo, @descriptelefono, @armado," +
+                                                    " @imei, @contrasena, @rango, @fechallegada, @idestado, @idcliente)", con);
+                comando.Parameters.AddWithValue("@modelo", tel.Modelo);
+                comando.Parameters.AddWithValue("@descriptelefono", tel.Descripcion);
+                comando.Parameters.AddWithValue("@armado", tel.Armado);
+                comando.Parameters.AddWithValue("@imei", tel.IMEI);
+                comando.Parameters.AddWithValue("@contrasena", tel.Contrasena);
+                comando.Parameters.AddWithValue("@rango", tel.Rango);
+                comando.Parameters.AddWithValue("@fechallegada", tel.FechaLlegada);
+                comando.Parameters.AddWithValue("@idestado", tel.IDEstado);
+                comando.Parameters.AddWithValue("@idcliente", tel.IDCliente);
+                comando.ExecuteNonQuery();
+            }
+        }
         #endregion
+
         #region Telprob
         public static List<Telprob> CargarTelprobs()
         {
@@ -174,9 +299,39 @@ namespace iS_Repair.Clases.DataBase
                 {
                     listaTelprobs.Add(new Telprob(Telprobs.GetInt32(0), Telprobs.GetInt16(1), Telprobs.GetDateTime(2)));
                 }
+                Telprobs.Close();
             }
             return listaTelprobs;
         }
+
+        public static void InsertarTelProb(Telprob telp)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO TELPROB (IDTELEFONO, IDPROBLEMA, FECHASOLUCION)" +
+                                                    " VALUES (@idtelefono, @idproblema, @fechasolucion)", con);
+                comando.Parameters.AddWithValue("@idtelefono", telp.ID);
+                comando.Parameters.AddWithValue("@idproblema", telp.IDProblema);
+                comando.Parameters.AddWithValue("@fechasolucion", telp.FechaSolucion);
+                comando.ExecuteNonQuery();
+            }
+        }
         #endregion
+
+        public static int ObtenerID()
+        {
+            int intID = 0;
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("SELECT IDENT_CURRENT('CLIENTE')", con);
+                SqlDataReader intValor = comando.ExecuteReader();
+                while (intValor.Read())
+                {
+                    intID = (int)intValor.GetDecimal(0) + 1;
+                }
+                intValor.Close();
+            }
+            return intID;
+        }
     }
 }

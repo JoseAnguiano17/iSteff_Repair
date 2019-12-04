@@ -81,6 +81,7 @@
             this.chkID = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtFID = new System.Windows.Forms.TextBox();
+            this.lblID = new Bunifu.Framework.UI.BunifuCustomLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.cardDatosCLiente.SuspendLayout();
             this.pnTop.SuspendLayout();
@@ -382,6 +383,7 @@
             // 
             this.pnContIzq.BackColor = System.Drawing.Color.White;
             this.pnContIzq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnContIzq.Controls.Add(this.lblID);
             this.pnContIzq.Controls.Add(this.chkID);
             this.pnContIzq.Controls.Add(this.label9);
             this.pnContIzq.Controls.Add(this.txtFID);
@@ -440,7 +442,7 @@
             this.txtNombre.BackColor = System.Drawing.Color.Thistle;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(17, 452);
+            this.txtNombre.Location = new System.Drawing.Point(17, 472);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(235, 31);
@@ -452,7 +454,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(13, 426);
+            this.label1.Location = new System.Drawing.Point(13, 446);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 23);
             this.label1.TabIndex = 5;
@@ -464,7 +466,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(13, 496);
+            this.label2.Location = new System.Drawing.Point(13, 515);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 23);
             this.label2.TabIndex = 19;
@@ -475,7 +477,7 @@
             this.txtApeP.BackColor = System.Drawing.Color.Thistle;
             this.txtApeP.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApeP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeP.Location = new System.Drawing.Point(17, 522);
+            this.txtApeP.Location = new System.Drawing.Point(17, 541);
             this.txtApeP.Multiline = true;
             this.txtApeP.Name = "txtApeP";
             this.txtApeP.Size = new System.Drawing.Size(235, 31);
@@ -487,7 +489,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(13, 574);
+            this.label3.Location = new System.Drawing.Point(13, 584);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 23);
             this.label3.TabIndex = 21;
@@ -498,7 +500,7 @@
             this.txtApeM.BackColor = System.Drawing.Color.Thistle;
             this.txtApeM.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApeM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeM.Location = new System.Drawing.Point(17, 600);
+            this.txtApeM.Location = new System.Drawing.Point(17, 610);
             this.txtApeM.Multiline = true;
             this.txtApeM.Name = "txtApeM";
             this.txtApeM.Size = new System.Drawing.Size(235, 31);
@@ -562,6 +564,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(165, 47);
             this.btnAgregar.TabIndex = 25;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // bunifuCheckbox1
             // 
@@ -766,6 +769,17 @@
             this.txtFID.TabIndex = 46;
             this.txtFID.TextChanged += new System.EventHandler(this.TxtFID_TextChanged);
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblID.Location = new System.Drawing.Point(13, 415);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(36, 23);
+            this.lblID.TabIndex = 49;
+            this.lblID.Text = "ID: ";
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -837,5 +851,6 @@
         private Bunifu.Framework.UI.BunifuCheckbox chkID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtFID;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblID;
     }
 }

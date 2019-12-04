@@ -23,6 +23,7 @@ namespace iS_Repair.Pestañas
             InitializeComponent();
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             FiltrarDGV();
+            lblID.Text = "ID: " + ConexionBD.ObtenerID();
         }
 
         void ActualizarDGV()
@@ -222,11 +223,15 @@ namespace iS_Repair.Pestañas
             List<Cliente> listaClientes = new List<Cliente>();
             using (SqlConnection con = ConexionBD.ObtenerConexion())
             {
-                SqlCommand comando = new SqlCommand("SELECT * FROM CLIENTE WHERE" + miFiltro.GenerarCondicion("CLIENTE"), con);
+                SqlCommand comando = new SqlCommand("SELECT * FROM CLIENTE WHERE" 
+                                                    + miFiltro.GenerarCondicion("CLIENTE"), con);
                 SqlDataReader Clientes = comando.ExecuteReader();
                 while (Clientes.Read())
                 {
-                    listaClientes.Add(new Cliente(Clientes.GetInt32(0), Clientes.GetString(1), Clientes.GetString(2), Clientes.GetString(3), Clientes.GetString(4)));
+                    listaClientes.Add(new Cliente(Clientes.GetInt32(0), 
+                                      Clientes.GetString(1), 
+                                      Clientes.GetString(2), Clientes.GetString(3), 
+                                      Clientes.GetString(4)));
                 }
             }
             return listaClientes;
@@ -237,7 +242,9 @@ namespace iS_Repair.Pestañas
             dgvClientes.Rows.Clear();
             foreach (Cliente cliente in FiltrarClientes())
             {
-                dgvClientes.Rows.Add(cliente.ID, cliente.Nombre, cliente.ApellidoP, cliente.ApellidoM, cliente.NumeroTelefono);
+                dgvClientes.Rows.Add(cliente.ID, cliente.Nombre, 
+                                     cliente.ApellidoP, cliente.ApellidoM, 
+                                     cliente.NumeroTelefono);
             }
         }
 
@@ -255,6 +262,14 @@ namespace iS_Repair.Pestañas
                 miFiltro.IDUno32 = false;
                 FiltrarDGV();
             }
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            Cliente miCliente = new Cliente(0, txtNombre.Text, txtApeP.Text, 
+                                            txtApeM.Text, txtNumTel.Text);
+            ConexionBD.InsertarCliente(miCliente);
+            FiltrarDGV();
         }
     }
 }
