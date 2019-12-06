@@ -17,7 +17,6 @@ namespace iS_Repair.Pestañas
         public Pedidos()
         {
             InitializeComponent();
-
             dgvPedidos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ActualizarDGV();
         }
@@ -27,7 +26,7 @@ namespace iS_Repair.Pestañas
             dgvPedidos.Rows.Clear();
             foreach (Pedido pedido in ConexionBD.CargarPedidos())
             {
-                dgvPedidos.Rows.Add(pedido.ID, pedido.Pieza, pedido.Costo.ToString("C"), (pedido.YaPedido)? "Sí": "No", pedido.FechaPedido, pedido.FechaRegistro, pedido.IDCliente, pedido.Usuario);
+                dgvPedidos.Rows.Add(pedido.ID, pedido.Pieza, pedido.Costo.ToString("C"), (pedido.YaPedido)? "Sí": "No", (pedido.FechaPedido==DateTime.MinValue)? "N/A": pedido.FechaPedido.ToString(), pedido.FechaRegistro, pedido.IDCliente, pedido.Usuario);
             }
         }
     }

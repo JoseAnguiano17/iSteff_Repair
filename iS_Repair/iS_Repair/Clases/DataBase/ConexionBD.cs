@@ -40,6 +40,7 @@ namespace iS_Repair.Clases.DataBase
         {
             List<SqlConnection> sqlLista = new List<SqlConnection>();
             sqlLista.Add(new SqlConnection(CrearCadenaConexion("Maro", "")));
+            sqlLista.Add(new SqlConnection(CrearCadenaConexion("Anguiano", "")));
             sqlLista.Add(new SqlConnection(CrearCadenaConexion("ANGUIANO-PC", "SERVER")));
             return sqlLista;
         }
@@ -161,7 +162,7 @@ namespace iS_Repair.Clases.DataBase
                 SqlDataReader Pedidos = comando.ExecuteReader();
                 while (Pedidos.Read())
                 {
-                    listaPedidos.Add(new Pedido(Pedidos.GetInt32(0), Pedidos.GetString(1), double.Parse(Pedidos.GetSqlMoney(2).ToString()), Pedidos.GetBoolean(3), Pedidos.GetDateTime(4), Pedidos.GetDateTime(5), Pedidos.GetInt32(6), Pedidos.GetString(7)));
+                    listaPedidos.Add(new Pedido(Pedidos.GetInt32(0), Pedidos.GetString(1), double.Parse(Pedidos.GetSqlMoney(2).ToString()), Pedidos.GetBoolean(3), (Pedidos["fechapedido"] is DBNull)? DateTime.MinValue : Pedidos.GetDateTime(4), Pedidos.GetDateTime(5), Pedidos.GetInt32(6), Pedidos.GetString(7)));
                 }
                 Pedidos.Close();
             }

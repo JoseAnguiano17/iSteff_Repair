@@ -33,19 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Telefonos));
-            this.pnlFiltros = new Bunifu.Framework.UI.BunifuCards();
-            this.sepFiltro = new Bunifu.Framework.UI.BunifuSeparator();
-            this.lblFiltros = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnContenido = new System.Windows.Forms.Panel();
             this.dgvClientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.pnContIzq = new System.Windows.Forms.Panel();
-            this.btnBuscar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pbBuscar = new System.Windows.Forms.PictureBox();
-            this.txtBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.pnTop = new System.Windows.Forms.Panel();
-            this.btnDownTopPanel = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,65 +45,24 @@
             this.FechaL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlFiltros.SuspendLayout();
+            this.pnContIzq = new System.Windows.Forms.Panel();
+            this.pnTop = new System.Windows.Forms.Panel();
+            this.btnDownTopPanel = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pnContenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            this.pnContIzq.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).BeginInit();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownTopPanel)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnlFiltros
-            // 
-            this.pnlFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(80)))), ((int)(((byte)(219)))));
-            this.pnlFiltros.BorderRadius = 5;
-            this.pnlFiltros.BottomSahddow = true;
-            this.pnlFiltros.color = System.Drawing.Color.Transparent;
-            this.pnlFiltros.Controls.Add(this.sepFiltro);
-            this.pnlFiltros.Controls.Add(this.lblFiltros);
-            this.pnlFiltros.LeftSahddow = false;
-            this.pnlFiltros.Location = new System.Drawing.Point(11, 94);
-            this.pnlFiltros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.RightSahddow = true;
-            this.pnlFiltros.ShadowDepth = 20;
-            this.pnlFiltros.Size = new System.Drawing.Size(243, 475);
-            this.pnlFiltros.TabIndex = 3;
-            // 
-            // sepFiltro
-            // 
-            this.sepFiltro.BackColor = System.Drawing.Color.Transparent;
-            this.sepFiltro.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.sepFiltro.LineThickness = 2;
-            this.sepFiltro.Location = new System.Drawing.Point(19, 49);
-            this.sepFiltro.Margin = new System.Windows.Forms.Padding(5);
-            this.sepFiltro.Name = "sepFiltro";
-            this.sepFiltro.Size = new System.Drawing.Size(187, 28);
-            this.sepFiltro.TabIndex = 4;
-            this.sepFiltro.Transparency = 255;
-            this.sepFiltro.Vertical = false;
-            // 
-            // lblFiltros
-            // 
-            this.lblFiltros.AutoSize = true;
-            this.lblFiltros.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltros.ForeColor = System.Drawing.Color.White;
-            this.lblFiltros.Location = new System.Drawing.Point(71, 14);
-            this.lblFiltros.Name = "lblFiltros";
-            this.lblFiltros.Size = new System.Drawing.Size(86, 32);
-            this.lblFiltros.TabIndex = 5;
-            this.lblFiltros.Text = "Filtros";
             // 
             // pnContenido
             // 
             this.pnContenido.Controls.Add(this.dgvClientes);
             this.pnContenido.Controls.Add(this.pnContIzq);
             this.pnContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContenido.Location = new System.Drawing.Point(0, 62);
-            this.pnContenido.Margin = new System.Windows.Forms.Padding(4);
+            this.pnContenido.Location = new System.Drawing.Point(0, 50);
             this.pnContenido.Name = "pnContenido";
-            this.pnContenido.Size = new System.Drawing.Size(1295, 701);
+            this.pnContenido.Size = new System.Drawing.Size(971, 570);
             this.pnContenido.TabIndex = 18;
             // 
             // dgvClientes
@@ -165,8 +113,8 @@
             this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.dgvClientes.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.dgvClientes.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvClientes.Location = new System.Drawing.Point(269, 0);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvClientes.Location = new System.Drawing.Point(202, 0);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvClientes.MultiSelect = false;
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
@@ -186,123 +134,8 @@
             this.dgvClientes.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvClientes.RowTemplate.Height = 30;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1026, 701);
+            this.dgvClientes.Size = new System.Drawing.Size(769, 570);
             this.dgvClientes.TabIndex = 1;
-            // 
-            // pnContIzq
-            // 
-            this.pnContIzq.BackColor = System.Drawing.Color.White;
-            this.pnContIzq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnContIzq.Controls.Add(this.btnBuscar);
-            this.pnContIzq.Controls.Add(this.pnlFiltros);
-            this.pnContIzq.Controls.Add(this.pbBuscar);
-            this.pnContIzq.Controls.Add(this.txtBuscar);
-            this.pnContIzq.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnContIzq.Location = new System.Drawing.Point(0, 0);
-            this.pnContIzq.Margin = new System.Windows.Forms.Padding(4);
-            this.pnContIzq.Name = "pnContIzq";
-            this.pnContIzq.Size = new System.Drawing.Size(269, 701);
-            this.pnContIzq.TabIndex = 4;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.BorderRadius = 0;
-            this.btnBuscar.ButtonText = "Buscar";
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnBuscar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnBuscar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Iconimage")));
-            this.btnBuscar.Iconimage_right = null;
-            this.btnBuscar.Iconimage_right_Selected = null;
-            this.btnBuscar.Iconimage_Selected = null;
-            this.btnBuscar.IconMarginLeft = 0;
-            this.btnBuscar.IconMarginRight = 0;
-            this.btnBuscar.IconRightVisible = true;
-            this.btnBuscar.IconRightZoom = 0D;
-            this.btnBuscar.IconVisible = false;
-            this.btnBuscar.IconZoom = 90D;
-            this.btnBuscar.IsTab = false;
-            this.btnBuscar.Location = new System.Drawing.Point(169, 25);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.btnBuscar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.btnBuscar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnBuscar.selected = false;
-            this.btnBuscar.Size = new System.Drawing.Size(84, 48);
-            this.btnBuscar.TabIndex = 6;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnBuscar.Textcolor = System.Drawing.Color.White;
-            this.btnBuscar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // pbBuscar
-            // 
-            this.pbBuscar.Image = global::iS_Repair.Properties.Resources.search;
-            this.pbBuscar.Location = new System.Drawing.Point(21, 31);
-            this.pbBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.pbBuscar.Name = "pbBuscar";
-            this.pbBuscar.Size = new System.Drawing.Size(44, 36);
-            this.pbBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBuscar.TabIndex = 5;
-            this.pbBuscar.TabStop = false;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.txtBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.txtBuscar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.txtBuscar.BorderThickness = 2;
-            this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuscar.isPassword = false;
-            this.txtBuscar.Location = new System.Drawing.Point(11, 23);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(160, 49);
-            this.txtBuscar.TabIndex = 4;
-            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // pnTop
-            // 
-            this.pnTop.BackColor = System.Drawing.Color.White;
-            this.pnTop.Controls.Add(this.btnDownTopPanel);
-            this.pnTop.Controls.Add(this.bunifuCustomLabel5);
-            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Margin = new System.Windows.Forms.Padding(4);
-            this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1295, 62);
-            this.pnTop.TabIndex = 19;
-            // 
-            // btnDownTopPanel
-            // 
-            this.btnDownTopPanel.BackColor = System.Drawing.Color.Transparent;
-            this.btnDownTopPanel.Image = global::iS_Repair.Properties.Resources.telephones;
-            this.btnDownTopPanel.ImageActive = null;
-            this.btnDownTopPanel.Location = new System.Drawing.Point(31, 12);
-            this.btnDownTopPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDownTopPanel.Name = "btnDownTopPanel";
-            this.btnDownTopPanel.Size = new System.Drawing.Size(45, 41);
-            this.btnDownTopPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnDownTopPanel.TabIndex = 16;
-            this.btnDownTopPanel.TabStop = false;
-            this.btnDownTopPanel.Zoom = 10;
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(83, 12);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(129, 37);
-            this.bunifuCustomLabel5.TabIndex = 17;
-            this.bunifuCustomLabel5.Text = "Telefonos";
             // 
             // ID
             // 
@@ -374,22 +207,63 @@
             this.IDCliente.Name = "IDCliente";
             this.IDCliente.ReadOnly = true;
             // 
+            // pnContIzq
+            // 
+            this.pnContIzq.BackColor = System.Drawing.Color.White;
+            this.pnContIzq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnContIzq.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnContIzq.Location = new System.Drawing.Point(0, 0);
+            this.pnContIzq.Name = "pnContIzq";
+            this.pnContIzq.Size = new System.Drawing.Size(202, 570);
+            this.pnContIzq.TabIndex = 4;
+            // 
+            // pnTop
+            // 
+            this.pnTop.BackColor = System.Drawing.Color.White;
+            this.pnTop.Controls.Add(this.btnDownTopPanel);
+            this.pnTop.Controls.Add(this.bunifuCustomLabel5);
+            this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTop.Location = new System.Drawing.Point(0, 0);
+            this.pnTop.Name = "pnTop";
+            this.pnTop.Size = new System.Drawing.Size(971, 50);
+            this.pnTop.TabIndex = 19;
+            // 
+            // btnDownTopPanel
+            // 
+            this.btnDownTopPanel.BackColor = System.Drawing.Color.Transparent;
+            this.btnDownTopPanel.Image = global::iS_Repair.Properties.Resources.telephones;
+            this.btnDownTopPanel.ImageActive = null;
+            this.btnDownTopPanel.Location = new System.Drawing.Point(23, 10);
+            this.btnDownTopPanel.Name = "btnDownTopPanel";
+            this.btnDownTopPanel.Size = new System.Drawing.Size(34, 33);
+            this.btnDownTopPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDownTopPanel.TabIndex = 16;
+            this.btnDownTopPanel.TabStop = false;
+            this.btnDownTopPanel.Zoom = 10;
+            // 
+            // bunifuCustomLabel5
+            // 
+            this.bunifuCustomLabel5.AutoSize = true;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(62, 10);
+            this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(101, 30);
+            this.bunifuCustomLabel5.TabIndex = 17;
+            this.bunifuCustomLabel5.Text = "Telefonos";
+            // 
             // Telefonos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.pnContenido);
             this.Controls.Add(this.pnTop);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Telefonos";
-            this.Size = new System.Drawing.Size(1295, 763);
-            this.pnlFiltros.ResumeLayout(false);
-            this.pnlFiltros.PerformLayout();
+            this.Size = new System.Drawing.Size(971, 620);
             this.pnContenido.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
-            this.pnContIzq.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbBuscar)).EndInit();
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownTopPanel)).EndInit();
@@ -398,18 +272,12 @@
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuCards pnlFiltros;
-        private Bunifu.Framework.UI.BunifuSeparator sepFiltro;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblFiltros;
         private System.Windows.Forms.Panel pnContenido;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvClientes;
         private System.Windows.Forms.Panel pnContIzq;
-        private Bunifu.Framework.UI.BunifuFlatButton btnBuscar;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtBuscar;
         private System.Windows.Forms.Panel pnTop;
         private Bunifu.Framework.UI.BunifuImageButton btnDownTopPanel;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private System.Windows.Forms.PictureBox pbBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
