@@ -11,6 +11,7 @@ using iS_Repair.Clases;
 using System.Data.SqlClient;
 using iS_Repair.Clases.DataBase;
 using iS_Repair.Clases.ClasesTablas;
+using iS_Repair.Clases.Utils;
 
 namespace iS_Repair.Pestañas
 {
@@ -24,6 +25,9 @@ namespace iS_Repair.Pestañas
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             FiltrarDGV();
             lblID.Text = "ID: " + ConexionBD.ObtenerID();
+            pnContIzq.HorizontalScroll.Maximum = 0;
+            pnContIzq.VerticalScroll.Maximum = 0;
+            pnContIzq.AutoScroll = true;
         }
 
         void ActualizarDGV()
@@ -45,18 +49,6 @@ namespace iS_Repair.Pestañas
                 cardDatosCLiente.Location = new Point((int)(pnTop.Width / 3.5), cardDatosCLiente.Location.Y);
             }
             sepDivisor.Width = (int)(pnContenido.Width * .96);
-        }
-
-        private void btnDownTopPanel_Click(object sender, EventArgs e)
-        {
-            if(pnTop.Height <= 50)
-            {
-                pnTop.Height = cardDatosCLiente.Height + sepDivisor.Height + 60;
-            }
-            else
-            {
-                pnTop.Height = 50;
-            }
         }
 
         private void ChkNombre_OnChange(object sender, EventArgs e)
@@ -230,8 +222,10 @@ namespace iS_Repair.Pestañas
                 {
                     listaClientes.Add(new Cliente(Clientes.GetInt32(0), 
                                       Clientes.GetString(1), 
-                                      Clientes.GetString(2), Clientes.GetString(3), 
+                                      Clientes.GetString(2), 
+                                      Clientes.GetString(3), 
                                       Clientes.GetString(4)));
+                    
                 }
             }
             return listaClientes;
@@ -243,7 +237,7 @@ namespace iS_Repair.Pestañas
             foreach (Cliente cliente in FiltrarClientes())
             {
                 dgvClientes.Rows.Add(cliente.ID, cliente.Nombre, 
-                                     cliente.ApellidoP, cliente.ApellidoM, 
+                                     cliente.ApellidoP, cliente.ApellidoM,
                                      cliente.NumeroTelefono);
             }
         }
@@ -268,7 +262,19 @@ namespace iS_Repair.Pestañas
         {
             Cliente miCliente = new Cliente(0, txtNombre.Text, txtApeP.Text, 
                                             txtApeM.Text, txtNumTel.Text);
-            ConexionBD.InsertarCliente(miCliente);
+            try
+            {
+                ConexionBD.InsertarCliente(miCliente);
+                MessageUtil.Information("Se ha agregado el cliente a la base de datos.");
+                txtNombre.Clear();
+                txtApeP.Clear();
+                txtApeM.Clear();
+                txtNumTel.Clear();
+            }
+            catch (SqlException ex)
+            {
+                MessageUtil.Error(ex.Message);
+            }
             FiltrarDGV();
         }
     }

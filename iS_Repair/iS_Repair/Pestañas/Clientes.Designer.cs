@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.dgvClientes = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,35 +53,34 @@
             this.btnDownTopPanel = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnContenido = new System.Windows.Forms.Panel();
             this.pnContIzq = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtApeP = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtApeM = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNumTel = new System.Windows.Forms.TextBox();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnAgregar = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.txtFNombre = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.chkNombre = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.chkApellidoP = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtFApeP = new System.Windows.Forms.TextBox();
-            this.chkApellidoM = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtFApeM = new System.Windows.Forms.TextBox();
-            this.chkNumTel = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtFNumTel = new System.Windows.Forms.TextBox();
+            this.lblID = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.chkID = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtFID = new System.Windows.Forms.TextBox();
-            this.lblID = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.chkNumTel = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtFNumTel = new System.Windows.Forms.TextBox();
+            this.chkApellidoM = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtFApeM = new System.Windows.Forms.TextBox();
+            this.chkApellidoP = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtFApeP = new System.Windows.Forms.TextBox();
+            this.chkNombre = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFNombre = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNumTel = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtApeM = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtApeP = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.cardDatosCLiente.SuspendLayout();
             this.pnTop.SuspendLayout();
@@ -96,20 +95,20 @@
             this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.AllowUserToResizeColumns = false;
             this.dgvClientes.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvClientes.ColumnHeadersHeight = 30;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -118,14 +117,14 @@
             this.ApellidoP,
             this.ApellidoM,
             this.NumTelefono});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvClientes.DoubleBuffered = true;
             this.dgvClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -133,28 +132,28 @@
             this.dgvClientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.dgvClientes.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.dgvClientes.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvClientes.Location = new System.Drawing.Point(269, 0);
-            this.dgvClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvClientes.Location = new System.Drawing.Point(208, 0);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvClientes.MultiSelect = false;
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.RowHeadersWidth = 60;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvClientes.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvClientes.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvClientes.RowTemplate.Height = 30;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1026, 775);
+            this.dgvClientes.Size = new System.Drawing.Size(763, 630);
             this.dgvClientes.TabIndex = 1;
             // 
             // ID
@@ -208,12 +207,12 @@
             this.cardDatosCLiente.Controls.Add(this.bunifuCustomLabel2);
             this.cardDatosCLiente.Controls.Add(this.bunifuMaterialTextbox1);
             this.cardDatosCLiente.LeftSahddow = false;
-            this.cardDatosCLiente.Location = new System.Drawing.Point(29, 73);
-            this.cardDatosCLiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cardDatosCLiente.Location = new System.Drawing.Point(22, 59);
+            this.cardDatosCLiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cardDatosCLiente.Name = "cardDatosCLiente";
             this.cardDatosCLiente.RightSahddow = true;
             this.cardDatosCLiente.ShadowDepth = 20;
-            this.cardDatosCLiente.Size = new System.Drawing.Size(617, 256);
+            this.cardDatosCLiente.Size = new System.Drawing.Size(463, 208);
             this.cardDatosCLiente.TabIndex = 12;
             // 
             // btnRegistrar
@@ -234,10 +233,10 @@
             this.btnRegistrar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(80)))), ((int)(((byte)(219)))));
             this.btnRegistrar.IdleForecolor = System.Drawing.Color.White;
             this.btnRegistrar.IdleLineColor = System.Drawing.Color.Transparent;
-            this.btnRegistrar.Location = new System.Drawing.Point(227, 203);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnRegistrar.Location = new System.Drawing.Point(170, 165);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(165, 47);
+            this.btnRegistrar.Size = new System.Drawing.Size(124, 38);
             this.btnRegistrar.TabIndex = 16;
             this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -246,9 +245,10 @@
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(225, 11);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(169, 9);
+            this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(154, 28);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(126, 23);
             this.bunifuCustomLabel4.TabIndex = 15;
             this.bunifuCustomLabel4.Text = "ID: 19100000";
             // 
@@ -257,9 +257,10 @@
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(237, 133);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(178, 108);
+            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(139, 23);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(108, 19);
             this.bunifuCustomLabel3.TabIndex = 14;
             this.bunifuCustomLabel3.Text = "No. Teléfono:";
             // 
@@ -276,10 +277,10 @@
             this.bunifuMaterialTextbox2.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(80)))), ((int)(((byte)(219)))));
             this.bunifuMaterialTextbox2.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.bunifuMaterialTextbox2.LineThickness = 4;
-            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(201, 155);
-            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.bunifuMaterialTextbox2.Location = new System.Drawing.Point(151, 126);
+            this.bunifuMaterialTextbox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuMaterialTextbox2.Name = "bunifuMaterialTextbox2";
-            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(216, 47);
+            this.bunifuMaterialTextbox2.Size = new System.Drawing.Size(162, 38);
             this.bunifuMaterialTextbox2.TabIndex = 13;
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -288,9 +289,10 @@
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(259, 46);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(194, 37);
+            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(95, 23);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(77, 19);
             this.bunifuCustomLabel2.TabIndex = 12;
             this.bunifuCustomLabel2.Text = "Nombre:";
             // 
@@ -307,10 +309,10 @@
             this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(80)))), ((int)(((byte)(219)))));
             this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.bunifuMaterialTextbox1.LineThickness = 4;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(65, 75);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(49, 61);
+            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(489, 49);
+            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(367, 40);
             this.bunifuMaterialTextbox1.TabIndex = 1;
             this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -319,10 +321,10 @@
             this.sepDivisor.BackColor = System.Drawing.Color.Transparent;
             this.sepDivisor.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
             this.sepDivisor.LineThickness = 5;
-            this.sepDivisor.Location = new System.Drawing.Point(29, 331);
-            this.sepDivisor.Margin = new System.Windows.Forms.Padding(5);
+            this.sepDivisor.Location = new System.Drawing.Point(22, 269);
+            this.sepDivisor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sepDivisor.Name = "sepDivisor";
-            this.sepDivisor.Size = new System.Drawing.Size(1235, 28);
+            this.sepDivisor.Size = new System.Drawing.Size(926, 23);
             this.sepDivisor.TabIndex = 13;
             this.sepDivisor.Transparency = 255;
             this.sepDivisor.Vertical = false;
@@ -332,9 +334,10 @@
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(81, 12);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(61, 10);
+            this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(264, 38);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(208, 30);
             this.bunifuCustomLabel5.TabIndex = 15;
             this.bunifuCustomLabel5.Text = "Registro de clientes";
             // 
@@ -347,9 +350,8 @@
             this.pnTop.Controls.Add(this.sepDivisor);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Margin = new System.Windows.Forms.Padding(4);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1295, 62);
+            this.pnTop.Size = new System.Drawing.Size(971, 50);
             this.pnTop.TabIndex = 16;
             // 
             // btnDownTopPanel
@@ -357,30 +359,27 @@
             this.btnDownTopPanel.BackColor = System.Drawing.Color.Transparent;
             this.btnDownTopPanel.Image = global::iS_Repair.Properties.Resources.teclado;
             this.btnDownTopPanel.ImageActive = null;
-            this.btnDownTopPanel.Location = new System.Drawing.Point(29, 12);
-            this.btnDownTopPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDownTopPanel.Location = new System.Drawing.Point(22, 10);
             this.btnDownTopPanel.Name = "btnDownTopPanel";
-            this.btnDownTopPanel.Size = new System.Drawing.Size(45, 41);
+            this.btnDownTopPanel.Size = new System.Drawing.Size(34, 33);
             this.btnDownTopPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnDownTopPanel.TabIndex = 14;
             this.btnDownTopPanel.TabStop = false;
             this.btnDownTopPanel.Zoom = 10;
-            this.btnDownTopPanel.Click += new System.EventHandler(this.btnDownTopPanel_Click);
             // 
             // pnContenido
             // 
             this.pnContenido.Controls.Add(this.dgvClientes);
             this.pnContenido.Controls.Add(this.pnContIzq);
-            this.pnContenido.Controls.Add(this.bunifuCheckbox1);
             this.pnContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContenido.Location = new System.Drawing.Point(0, 62);
-            this.pnContenido.Margin = new System.Windows.Forms.Padding(4);
+            this.pnContenido.Location = new System.Drawing.Point(0, 50);
             this.pnContenido.Name = "pnContenido";
-            this.pnContenido.Size = new System.Drawing.Size(1295, 775);
+            this.pnContenido.Size = new System.Drawing.Size(971, 630);
             this.pnContenido.TabIndex = 17;
             // 
             // pnContIzq
             // 
+            this.pnContIzq.AutoSize = true;
             this.pnContIzq.BackColor = System.Drawing.Color.White;
             this.pnContIzq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnContIzq.Controls.Add(this.lblID);
@@ -413,132 +412,216 @@
             this.pnContIzq.Controls.Add(this.panel1);
             this.pnContIzq.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnContIzq.Location = new System.Drawing.Point(0, 0);
-            this.pnContIzq.Margin = new System.Windows.Forms.Padding(4);
             this.pnContIzq.Name = "pnContIzq";
-            this.pnContIzq.Size = new System.Drawing.Size(269, 775);
-            this.pnContIzq.TabIndex = 4;
+            this.pnContIzq.Size = new System.Drawing.Size(208, 630);
+            this.pnContIzq.TabIndex = 6;
             // 
-            // panel1
+            // lblID
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.panel1.Location = new System.Drawing.Point(-1, 356);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(269, 10);
-            this.panel1.TabIndex = 8;
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblID.Location = new System.Drawing.Point(10, 337);
+            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(30, 19);
+            this.lblID.TabIndex = 49;
+            this.lblID.Text = "ID: ";
             // 
-            // bunifuCustomLabel1
+            // chkID
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(11, 17);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(201, 32);
-            this.bunifuCustomLabel1.TabIndex = 16;
-            this.bunifuCustomLabel1.Text = "Búsqueda filtrada";
+            this.chkID.BackColor = System.Drawing.Color.Thistle;
+            this.chkID.ChechedOffColor = System.Drawing.Color.Thistle;
+            this.chkID.Checked = false;
+            this.chkID.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.chkID.ForeColor = System.Drawing.Color.White;
+            this.chkID.Location = new System.Drawing.Point(13, 67);
+            this.chkID.Name = "chkID";
+            this.chkID.Size = new System.Drawing.Size(20, 20);
+            this.chkID.TabIndex = 48;
+            this.chkID.OnChange += new System.EventHandler(this.ChkID_OnChange);
             // 
-            // txtNombre
+            // label9
             // 
-            this.txtNombre.BackColor = System.Drawing.Color.Thistle;
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(17, 472);
-            this.txtNombre.Multiline = true;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(235, 31);
-            this.txtNombre.TabIndex = 18;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(10, 46);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(21, 15);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "ID:";
             // 
-            // label1
+            // txtFID
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(13, 446);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 23);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nombre(s):";
+            this.txtFID.BackColor = System.Drawing.Color.LightGray;
+            this.txtFID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFID.Enabled = false;
+            this.txtFID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFID.Location = new System.Drawing.Point(35, 67);
+            this.txtFID.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFID.Multiline = true;
+            this.txtFID.Name = "txtFID";
+            this.txtFID.Size = new System.Drawing.Size(154, 20);
+            this.txtFID.TabIndex = 46;
+            this.txtFID.TextChanged += new System.EventHandler(this.TxtFID_TextChanged);
             // 
-            // label2
+            // chkNumTel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(13, 515);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 23);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Apellido Paterno:";
+            this.chkNumTel.BackColor = System.Drawing.Color.Thistle;
+            this.chkNumTel.ChechedOffColor = System.Drawing.Color.Thistle;
+            this.chkNumTel.Checked = false;
+            this.chkNumTel.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.chkNumTel.ForeColor = System.Drawing.Color.White;
+            this.chkNumTel.Location = new System.Drawing.Point(13, 257);
+            this.chkNumTel.Name = "chkNumTel";
+            this.chkNumTel.Size = new System.Drawing.Size(20, 20);
+            this.chkNumTel.TabIndex = 45;
+            this.chkNumTel.OnChange += new System.EventHandler(this.ChkNumTel_OnChange);
             // 
-            // txtApeP
+            // label8
             // 
-            this.txtApeP.BackColor = System.Drawing.Color.Thistle;
-            this.txtApeP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApeP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeP.Location = new System.Drawing.Point(17, 541);
-            this.txtApeP.Multiline = true;
-            this.txtApeP.Name = "txtApeP";
-            this.txtApeP.Size = new System.Drawing.Size(235, 31);
-            this.txtApeP.TabIndex = 20;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(10, 236);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(119, 15);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Número de Teléfono:";
             // 
-            // label3
+            // txtFNumTel
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(13, 584);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 23);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Apellido Materno:";
+            this.txtFNumTel.BackColor = System.Drawing.Color.LightGray;
+            this.txtFNumTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFNumTel.Enabled = false;
+            this.txtFNumTel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFNumTel.Location = new System.Drawing.Point(35, 257);
+            this.txtFNumTel.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFNumTel.Multiline = true;
+            this.txtFNumTel.Name = "txtFNumTel";
+            this.txtFNumTel.Size = new System.Drawing.Size(154, 20);
+            this.txtFNumTel.TabIndex = 43;
+            this.txtFNumTel.TextChanged += new System.EventHandler(this.TxtFNumTel_TextChanged);
             // 
-            // txtApeM
+            // chkApellidoM
             // 
-            this.txtApeM.BackColor = System.Drawing.Color.Thistle;
-            this.txtApeM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtApeM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeM.Location = new System.Drawing.Point(17, 610);
-            this.txtApeM.Multiline = true;
-            this.txtApeM.Name = "txtApeM";
-            this.txtApeM.Size = new System.Drawing.Size(235, 31);
-            this.txtApeM.TabIndex = 22;
+            this.chkApellidoM.BackColor = System.Drawing.Color.Thistle;
+            this.chkApellidoM.ChechedOffColor = System.Drawing.Color.Thistle;
+            this.chkApellidoM.Checked = false;
+            this.chkApellidoM.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.chkApellidoM.ForeColor = System.Drawing.Color.White;
+            this.chkApellidoM.Location = new System.Drawing.Point(13, 209);
+            this.chkApellidoM.Name = "chkApellidoM";
+            this.chkApellidoM.Size = new System.Drawing.Size(20, 20);
+            this.chkApellidoM.TabIndex = 42;
+            this.chkApellidoM.OnChange += new System.EventHandler(this.ChkApellidoM_OnChange);
             // 
-            // label4
+            // label7
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(13, 651);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 23);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Número de Teléfono:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(10, 188);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 15);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Apellido Materno:";
             // 
-            // txtNumTel
+            // txtFApeM
             // 
-            this.txtNumTel.BackColor = System.Drawing.Color.Thistle;
-            this.txtNumTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumTel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumTel.Location = new System.Drawing.Point(17, 677);
-            this.txtNumTel.Multiline = true;
-            this.txtNumTel.Name = "txtNumTel";
-            this.txtNumTel.Size = new System.Drawing.Size(235, 31);
-            this.txtNumTel.TabIndex = 24;
+            this.txtFApeM.BackColor = System.Drawing.Color.LightGray;
+            this.txtFApeM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFApeM.Enabled = false;
+            this.txtFApeM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFApeM.Location = new System.Drawing.Point(35, 209);
+            this.txtFApeM.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFApeM.Multiline = true;
+            this.txtFApeM.Name = "txtFApeM";
+            this.txtFApeM.Size = new System.Drawing.Size(154, 20);
+            this.txtFApeM.TabIndex = 40;
+            this.txtFApeM.TextChanged += new System.EventHandler(this.TxtFApeM_TextChanged);
             // 
-            // bunifuCustomLabel6
+            // chkApellidoP
             // 
-            this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(11, 376);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(106, 32);
-            this.bunifuCustomLabel6.TabIndex = 17;
-            this.bunifuCustomLabel6.Text = "Registro:";
+            this.chkApellidoP.BackColor = System.Drawing.Color.Thistle;
+            this.chkApellidoP.ChechedOffColor = System.Drawing.Color.Thistle;
+            this.chkApellidoP.Checked = false;
+            this.chkApellidoP.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.chkApellidoP.ForeColor = System.Drawing.Color.White;
+            this.chkApellidoP.Location = new System.Drawing.Point(13, 161);
+            this.chkApellidoP.Name = "chkApellidoP";
+            this.chkApellidoP.Size = new System.Drawing.Size(20, 20);
+            this.chkApellidoP.TabIndex = 39;
+            this.chkApellidoP.OnChange += new System.EventHandler(this.ChkApellidoP_OnChange);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(10, 140);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 15);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Apellido Paterno:";
+            // 
+            // txtFApeP
+            // 
+            this.txtFApeP.BackColor = System.Drawing.Color.LightGray;
+            this.txtFApeP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFApeP.Enabled = false;
+            this.txtFApeP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFApeP.Location = new System.Drawing.Point(35, 161);
+            this.txtFApeP.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFApeP.Multiline = true;
+            this.txtFApeP.Name = "txtFApeP";
+            this.txtFApeP.Size = new System.Drawing.Size(154, 20);
+            this.txtFApeP.TabIndex = 37;
+            this.txtFApeP.TextChanged += new System.EventHandler(this.TxtFApeP_TextChanged);
+            // 
+            // chkNombre
+            // 
+            this.chkNombre.BackColor = System.Drawing.Color.Thistle;
+            this.chkNombre.ChechedOffColor = System.Drawing.Color.Thistle;
+            this.chkNombre.Checked = false;
+            this.chkNombre.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.chkNombre.ForeColor = System.Drawing.Color.White;
+            this.chkNombre.Location = new System.Drawing.Point(13, 113);
+            this.chkNombre.Name = "chkNombre";
+            this.chkNombre.Size = new System.Drawing.Size(20, 20);
+            this.chkNombre.TabIndex = 36;
+            this.chkNombre.OnChange += new System.EventHandler(this.ChkNombre_OnChange);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(10, 91);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 15);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Nombre(s):";
+            // 
+            // txtFNombre
+            // 
+            this.txtFNombre.BackColor = System.Drawing.Color.LightGray;
+            this.txtFNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFNombre.Enabled = false;
+            this.txtFNombre.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFNombre.Location = new System.Drawing.Point(35, 112);
+            this.txtFNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFNombre.Multiline = true;
+            this.txtFNombre.Name = "txtFNombre";
+            this.txtFNombre.Size = new System.Drawing.Size(154, 20);
+            this.txtFNombre.TabIndex = 28;
+            this.txtFNombre.TextChanged += new System.EventHandler(this.TxtFNombre_TextChanged);
             // 
             // btnAgregar
             // 
@@ -558,237 +641,155 @@
             this.btnAgregar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(80)))), ((int)(((byte)(219)))));
             this.btnAgregar.IdleForecolor = System.Drawing.Color.White;
             this.btnAgregar.IdleLineColor = System.Drawing.Color.Transparent;
-            this.btnAgregar.Location = new System.Drawing.Point(47, 718);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.btnAgregar.Location = new System.Drawing.Point(35, 583);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(5);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(165, 47);
+            this.btnAgregar.Size = new System.Drawing.Size(124, 38);
             this.btnAgregar.TabIndex = 25;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // bunifuCheckbox1
+            // bunifuCustomLabel6
             // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(363, 115);
-            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 26;
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(8, 306);
+            this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(84, 25);
+            this.bunifuCustomLabel6.TabIndex = 17;
+            this.bunifuCustomLabel6.Text = "Registro:";
             // 
-            // txtFNombre
+            // label4
             // 
-            this.txtFNombre.BackColor = System.Drawing.Color.LightGray;
-            this.txtFNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFNombre.Enabled = false;
-            this.txtFNombre.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFNombre.Location = new System.Drawing.Point(47, 138);
-            this.txtFNombre.Multiline = true;
-            this.txtFNombre.Name = "txtFNombre";
-            this.txtFNombre.Size = new System.Drawing.Size(205, 25);
-            this.txtFNombre.TabIndex = 28;
-            this.txtFNombre.TextChanged += new System.EventHandler(this.TxtFNombre_TextChanged);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(10, 529);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 19);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Número de Teléfono:";
             // 
-            // label5
+            // txtNumTel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(13, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 20);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Nombre(s):";
+            this.txtNumTel.BackColor = System.Drawing.Color.Thistle;
+            this.txtNumTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumTel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumTel.Location = new System.Drawing.Point(13, 550);
+            this.txtNumTel.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNumTel.Multiline = true;
+            this.txtNumTel.Name = "txtNumTel";
+            this.txtNumTel.Size = new System.Drawing.Size(176, 25);
+            this.txtNumTel.TabIndex = 24;
             // 
-            // chkNombre
+            // label3
             // 
-            this.chkNombre.BackColor = System.Drawing.Color.Thistle;
-            this.chkNombre.ChechedOffColor = System.Drawing.Color.Thistle;
-            this.chkNombre.Checked = false;
-            this.chkNombre.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.chkNombre.ForeColor = System.Drawing.Color.White;
-            this.chkNombre.Location = new System.Drawing.Point(17, 138);
-            this.chkNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chkNombre.Name = "chkNombre";
-            this.chkNombre.Size = new System.Drawing.Size(20, 20);
-            this.chkNombre.TabIndex = 36;
-            this.chkNombre.OnChange += new System.EventHandler(this.ChkNombre_OnChange);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(10, 474);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 19);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Apellido Materno:";
             // 
-            // chkApellidoP
+            // txtApeM
             // 
-            this.chkApellidoP.BackColor = System.Drawing.Color.Thistle;
-            this.chkApellidoP.ChechedOffColor = System.Drawing.Color.Thistle;
-            this.chkApellidoP.Checked = false;
-            this.chkApellidoP.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.chkApellidoP.ForeColor = System.Drawing.Color.White;
-            this.chkApellidoP.Location = new System.Drawing.Point(17, 198);
-            this.chkApellidoP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chkApellidoP.Name = "chkApellidoP";
-            this.chkApellidoP.Size = new System.Drawing.Size(20, 20);
-            this.chkApellidoP.TabIndex = 39;
-            this.chkApellidoP.OnChange += new System.EventHandler(this.ChkApellidoP_OnChange);
+            this.txtApeM.BackColor = System.Drawing.Color.Thistle;
+            this.txtApeM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApeM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApeM.Location = new System.Drawing.Point(13, 496);
+            this.txtApeM.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApeM.Multiline = true;
+            this.txtApeM.Name = "txtApeM";
+            this.txtApeM.Size = new System.Drawing.Size(176, 25);
+            this.txtApeM.TabIndex = 22;
             // 
-            // label6
+            // label2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(13, 172);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 20);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Apellido Paterno:";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(10, 418);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 19);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Apellido Paterno:";
             // 
-            // txtFApeP
+            // txtApeP
             // 
-            this.txtFApeP.BackColor = System.Drawing.Color.LightGray;
-            this.txtFApeP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFApeP.Enabled = false;
-            this.txtFApeP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFApeP.Location = new System.Drawing.Point(47, 198);
-            this.txtFApeP.Multiline = true;
-            this.txtFApeP.Name = "txtFApeP";
-            this.txtFApeP.Size = new System.Drawing.Size(205, 25);
-            this.txtFApeP.TabIndex = 37;
-            this.txtFApeP.TextChanged += new System.EventHandler(this.TxtFApeP_TextChanged);
+            this.txtApeP.BackColor = System.Drawing.Color.Thistle;
+            this.txtApeP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtApeP.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApeP.Location = new System.Drawing.Point(13, 440);
+            this.txtApeP.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApeP.Multiline = true;
+            this.txtApeP.Name = "txtApeP";
+            this.txtApeP.Size = new System.Drawing.Size(176, 25);
+            this.txtApeP.TabIndex = 20;
             // 
-            // chkApellidoM
+            // label1
             // 
-            this.chkApellidoM.BackColor = System.Drawing.Color.Thistle;
-            this.chkApellidoM.ChechedOffColor = System.Drawing.Color.Thistle;
-            this.chkApellidoM.Checked = false;
-            this.chkApellidoM.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.chkApellidoM.ForeColor = System.Drawing.Color.White;
-            this.chkApellidoM.Location = new System.Drawing.Point(17, 257);
-            this.chkApellidoM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chkApellidoM.Name = "chkApellidoM";
-            this.chkApellidoM.Size = new System.Drawing.Size(20, 20);
-            this.chkApellidoM.TabIndex = 42;
-            this.chkApellidoM.OnChange += new System.EventHandler(this.ChkApellidoM_OnChange);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(10, 362);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Nombre(s):";
             // 
-            // label7
+            // txtNombre
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(13, 231);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(129, 20);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "Apellido Materno:";
+            this.txtNombre.BackColor = System.Drawing.Color.Thistle;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(13, 384);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.Multiline = true;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(176, 25);
+            this.txtNombre.TabIndex = 18;
             // 
-            // txtFApeM
+            // bunifuCustomLabel1
             // 
-            this.txtFApeM.BackColor = System.Drawing.Color.LightGray;
-            this.txtFApeM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFApeM.Enabled = false;
-            this.txtFApeM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFApeM.Location = new System.Drawing.Point(47, 257);
-            this.txtFApeM.Multiline = true;
-            this.txtFApeM.Name = "txtFApeM";
-            this.txtFApeM.Size = new System.Drawing.Size(205, 25);
-            this.txtFApeM.TabIndex = 40;
-            this.txtFApeM.TextChanged += new System.EventHandler(this.TxtFApeM_TextChanged);
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(8, 14);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(160, 25);
+            this.bunifuCustomLabel1.TabIndex = 16;
+            this.bunifuCustomLabel1.Text = "Búsqueda filtrada";
             // 
-            // chkNumTel
+            // panel1
             // 
-            this.chkNumTel.BackColor = System.Drawing.Color.Thistle;
-            this.chkNumTel.ChechedOffColor = System.Drawing.Color.Thistle;
-            this.chkNumTel.Checked = false;
-            this.chkNumTel.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.chkNumTel.ForeColor = System.Drawing.Color.White;
-            this.chkNumTel.Location = new System.Drawing.Point(17, 316);
-            this.chkNumTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chkNumTel.Name = "chkNumTel";
-            this.chkNumTel.Size = new System.Drawing.Size(20, 20);
-            this.chkNumTel.TabIndex = 45;
-            this.chkNumTel.OnChange += new System.EventHandler(this.ChkNumTel_OnChange);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(13, 290);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 20);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Número de Teléfono:";
-            // 
-            // txtFNumTel
-            // 
-            this.txtFNumTel.BackColor = System.Drawing.Color.LightGray;
-            this.txtFNumTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFNumTel.Enabled = false;
-            this.txtFNumTel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFNumTel.Location = new System.Drawing.Point(47, 316);
-            this.txtFNumTel.Multiline = true;
-            this.txtFNumTel.Name = "txtFNumTel";
-            this.txtFNumTel.Size = new System.Drawing.Size(205, 25);
-            this.txtFNumTel.TabIndex = 43;
-            this.txtFNumTel.TextChanged += new System.EventHandler(this.TxtFNumTel_TextChanged);
-            // 
-            // chkID
-            // 
-            this.chkID.BackColor = System.Drawing.Color.Thistle;
-            this.chkID.ChechedOffColor = System.Drawing.Color.Thistle;
-            this.chkID.Checked = false;
-            this.chkID.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.chkID.ForeColor = System.Drawing.Color.White;
-            this.chkID.Location = new System.Drawing.Point(17, 83);
-            this.chkID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.chkID.Name = "chkID";
-            this.chkID.Size = new System.Drawing.Size(20, 20);
-            this.chkID.TabIndex = 48;
-            this.chkID.OnChange += new System.EventHandler(this.ChkID_OnChange);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(13, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 20);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "ID:";
-            // 
-            // txtFID
-            // 
-            this.txtFID.BackColor = System.Drawing.Color.LightGray;
-            this.txtFID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFID.Enabled = false;
-            this.txtFID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFID.Location = new System.Drawing.Point(47, 83);
-            this.txtFID.Multiline = true;
-            this.txtFID.Name = "txtFID";
-            this.txtFID.Size = new System.Drawing.Size(205, 25);
-            this.txtFID.TabIndex = 46;
-            this.txtFID.TextChanged += new System.EventHandler(this.TxtFID_TextChanged);
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblID.Location = new System.Drawing.Point(13, 415);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(36, 23);
-            this.lblID.TabIndex = 49;
-            this.lblID.Text = "ID: ";
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.panel1.Location = new System.Drawing.Point(-1, 289);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(205, 8);
+            this.panel1.TabIndex = 8;
             // 
             // Clientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnContenido);
             this.Controls.Add(this.pnTop);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Clientes";
-            this.Size = new System.Drawing.Size(1295, 837);
+            this.Size = new System.Drawing.Size(971, 680);
             this.SizeChanged += new System.EventHandler(this.Clientes_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.cardDatosCLiente.ResumeLayout(false);
@@ -797,6 +798,7 @@
             this.pnTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDownTopPanel)).EndInit();
             this.pnContenido.ResumeLayout(false);
+            this.pnContenido.PerformLayout();
             this.pnContIzq.ResumeLayout(false);
             this.pnContIzq.PerformLayout();
             this.ResumeLayout(false);
@@ -817,28 +819,16 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Panel pnContenido;
-        private System.Windows.Forms.Panel pnContIzq;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoM;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumTelefono;
-        private System.Windows.Forms.Panel panel1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private System.Windows.Forms.TextBox txtNombre;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNumTel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtApeM;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApeP;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnAgregar;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
-        private System.Windows.Forms.TextBox txtFNombre;
-        private Bunifu.Framework.UI.BunifuCheckbox chkNombre;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnContIzq;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblID;
+        private Bunifu.Framework.UI.BunifuCheckbox chkID;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtFID;
         private Bunifu.Framework.UI.BunifuCheckbox chkNumTel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtFNumTel;
@@ -848,9 +838,20 @@
         private Bunifu.Framework.UI.BunifuCheckbox chkApellidoP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFApeP;
-        private Bunifu.Framework.UI.BunifuCheckbox chkID;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtFID;
-        private Bunifu.Framework.UI.BunifuCustomLabel lblID;
+        private Bunifu.Framework.UI.BunifuCheckbox chkNombre;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtFNombre;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAgregar;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtNumTel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtApeM;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtApeP;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

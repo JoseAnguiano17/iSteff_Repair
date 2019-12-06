@@ -35,13 +35,12 @@ namespace iS_Repair.Clases.DataBase
                 return con;
             }
         }
-
         public static List<SqlConnection> ObtenerListaConexiones()
         {
             List<SqlConnection> sqlLista = new List<SqlConnection>();
             sqlLista.Add(new SqlConnection(CrearCadenaConexion("Maro", "")));
-            sqlLista.Add(new SqlConnection(CrearCadenaConexion("Anguiano", "")));
             sqlLista.Add(new SqlConnection(CrearCadenaConexion("ANGUIANO-PC", "SERVER")));
+            sqlLista.Add(new SqlConnection(CrearCadenaConexion("Anguiano", "")));
             return sqlLista;
         }
 
@@ -64,6 +63,7 @@ namespace iS_Repair.Clases.DataBase
                         Clientes.GetString(2), Clientes.GetString(3), Clientes.GetString(4)));
                 }
                 Clientes.Close();
+                con.Close();
             }
             return listaClientes;
         }
@@ -79,6 +79,7 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@apellidom", cliente.ApellidoM);
                 comando.Parameters.AddWithValue("@numtelefono", cliente.NumeroTelefono);
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         #endregion
@@ -96,6 +97,7 @@ namespace iS_Repair.Clases.DataBase
                     listaEmpleados.Add(new Empleado(Empleados.GetString(0), Empleados.GetString(1), Empleados.GetString(2), Empleados.GetString(3), Empleados.GetString(4), Empleados.GetString(5), Empleados.GetString(6), Empleados.GetString(7)));
                 }
                 Empleados.Close();
+                con.Close();
             }
             return listaEmpleados;
         }
@@ -117,6 +119,7 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@correo", emp.Correo);
                 comando.Parameters.AddWithValue("@direccion", emp.Direccion);
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         #endregion
@@ -134,6 +137,7 @@ namespace iS_Repair.Clases.DataBase
                     listaEstados.Add(new Estado(Estados.GetInt16(0), Estados.GetString(1), Estados.GetString(2), Estados.GetInt32(3)));
                 }
                 Estados.Close();
+                con.Close();
             }
             return listaEstados;
         }
@@ -148,6 +152,7 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@descripestado", est.Descripcion);
                 comando.Parameters.AddWithValue("@color", est.Color);
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         #endregion
@@ -165,6 +170,7 @@ namespace iS_Repair.Clases.DataBase
                     listaPedidos.Add(new Pedido(Pedidos.GetInt32(0), Pedidos.GetString(1), double.Parse(Pedidos.GetSqlMoney(2).ToString()), Pedidos.GetBoolean(3), (Pedidos["fechapedido"] is DBNull)? DateTime.MinValue : Pedidos.GetDateTime(4), Pedidos.GetDateTime(5), Pedidos.GetInt32(6), Pedidos.GetString(7)));
                 }
                 Pedidos.Close();
+                con.Close();
             }
             return listaPedidos;
         }
@@ -184,6 +190,7 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@idcliente", pedido.IDCliente);
                 comando.Parameters.AddWithValue("@usuario", pedido.Usuario);
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         #endregion
@@ -201,6 +208,7 @@ namespace iS_Repair.Clases.DataBase
                     listaPendientes.Add(new Pendiente(Pendientes.GetInt32(0), Pendientes.GetString(1), Pendientes.GetDateTime(2), Pendientes.GetString(3)));
                 }
                 Pendientes.Close();
+                con.Close();
             }
             return listaPendientes;
         }
@@ -215,6 +223,7 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@fecharegistro", pend.FechaRegistro);
                 comando.Parameters.AddWithValue("@usuario", pend.Usuario);
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         #endregion
@@ -232,6 +241,7 @@ namespace iS_Repair.Clases.DataBase
                     listaProblemas.Add(new Problema(Problemas.GetInt16(0), Problemas.GetString(1), Problemas.GetDouble(2)));
                 }
                 Problemas.Close();
+                con.Close();
             }
             return listaProblemas;
         }
@@ -245,6 +255,7 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@descripproblema", prob.Descripcion);
                 comando.Parameters.AddWithValue("@costo", prob.Costo);
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         #endregion
@@ -262,6 +273,7 @@ namespace iS_Repair.Clases.DataBase
                     listaTelefonos.Add(new Telefono(Telefonos.GetInt32(0), Telefonos.GetString(1), Telefonos.GetString(2), Telefonos.GetBoolean(3), Telefonos.GetString(4), Telefonos.GetString(5), char.Parse(Telefonos.GetString(6)), Telefonos.GetDateTime(7), Telefonos.GetInt16(8), Telefonos.GetInt32(9)));
                 }
                 Telefonos.Close();
+                con.Close();
             }
             return listaTelefonos;
         }
@@ -284,6 +296,7 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@idestado", tel.IDEstado);
                 comando.Parameters.AddWithValue("@idcliente", tel.IDCliente);
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         #endregion
@@ -301,6 +314,7 @@ namespace iS_Repair.Clases.DataBase
                     listaTelprobs.Add(new Telprob(Telprobs.GetInt32(0), Telprobs.GetInt16(1), Telprobs.GetDateTime(2)));
                 }
                 Telprobs.Close();
+                con.Close();
             }
             return listaTelprobs;
         }
@@ -315,6 +329,7 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@idproblema", telp.IDProblema);
                 comando.Parameters.AddWithValue("@fechasolucion", telp.FechaSolucion);
                 comando.ExecuteNonQuery();
+                con.Close();
             }
         }
         #endregion
@@ -326,11 +341,10 @@ namespace iS_Repair.Clases.DataBase
             {
                 SqlCommand comando = new SqlCommand("SELECT IDENT_CURRENT('CLIENTE')", con);
                 SqlDataReader intValor = comando.ExecuteReader();
-                while (intValor.Read())
-                {
-                    intID = (int)intValor.GetDecimal(0) + 1;
-                }
+                intValor.Read();
+                intID = (int)intValor.GetDecimal(0) + 1;
                 intValor.Close();
+                con.Close();
             }
             return intID;
         }
