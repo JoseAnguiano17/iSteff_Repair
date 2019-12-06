@@ -66,7 +66,15 @@ namespace iS_Repair.Clases.ClasesTablas
             set { _strDireccion = value; }
         }
 
-        public Empleado(string strUsuario, string strContrasena, string strNombre, string strAPP, string strAM, string strTel, string strCorreo, string strDir)
+        private bool _blnAdmin;
+
+        public bool Administrador
+        {
+            get { return _blnAdmin; }
+            set { _blnAdmin = value; }
+        }
+
+        public Empleado(string strUsuario, string strContrasena, string strNombre, string strAPP, string strAM, string strTel, string strCorreo, string strDir, bool blnAdmin)
         {
             Usuario = strUsuario;
             Contrasena = strContrasena;
@@ -76,6 +84,12 @@ namespace iS_Repair.Clases.ClasesTablas
             Telefono = strTel;
             Correo = strCorreo;
             Direccion = strDir;
+            Administrador = blnAdmin;
+        }
+
+        public Empleado()
+        {
+
         }
     }
 }
