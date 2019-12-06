@@ -23,6 +23,7 @@ namespace iS_Repair.Forms
                 if (ConexionBD.DetectarAdmin() == null)
                 {
                     lblLogin.Text = "Registrar un administrador";
+                    btnRegistrar.ButtonText = "Registrar";
                 }
             }
             catch (Exception)
@@ -49,8 +50,7 @@ namespace iS_Repair.Forms
                 {
                     //se inicia sesion con admin nuevo
                     Empleado emp;
-                    ConexionBD.InsertarEmpleado(emp=new Empleado(txtUsuario.Text, txtContrasena.Text, "Admin",
-                                               "", "", "", "reparacionesisteff@gmail.com", "Morelos #610 Col Centro Nuevo Laredo", true));
+                    ConexionBD.InsertarEmpleado(emp=new Empleado(txtUsuario.Text, txtContrasena.Text, "Admin", " ", " ", " ", "reparacionesisteff@gmail.com", "Morelos #610 Col Centro Nuevo Laredo", true));
                     IniciarSistema(emp);
                 }
                 catch (Exception x)
@@ -63,7 +63,7 @@ namespace iS_Repair.Forms
                 Empleado emp = ConexionBD.DetectarEmpleado(txtUsuario.Text, txtContrasena.Text);
                 if(emp == null)
                 {
-                    MessageUtil.Error("Empleado no existe o la contraseña es incorrecta.");
+                    MessageUtil.Error("El empleado no existe o la contraseña es incorrecta.");
                     return;
                 }
                 if (emp.Usuario.Equals(txtUsuario.Text)

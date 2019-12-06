@@ -106,9 +106,9 @@ namespace iS_Repair.Clases.DataBase
         {
             using (SqlConnection con = ObtenerConexion())
             {
-                SqlCommand comando = new SqlCommand("INSERT INTO EMPLEADO (USUARIO, CONTRASENA, NOMBRE, APELLIDOP" +
-                                                    " APELLIDOM, NUMTELEFONO, CORREO, DIRECCION)" +
-                                         " VALUES (@usuario, @contrasena, @nombre, @apellidoP, @apellidom, @numtelefono" +
+                SqlCommand comando = new SqlCommand("INSERT INTO EMPLEADO (USUARIO, CONTRASENA, NOMBRE, APELLIDOP," +
+                                                    " APELLIDOM, NUMTELEFONO, CORREO, DIRECCIÓN, ADMINISTRADOR)" +
+                                         " VALUES (@usuario, @contrasena, @nombre, @apellidoP, @apellidom, @numtelefono," +
                                          " @correo, @direccion, @administrador)", con);
                 comando.Parameters.AddWithValue("@usuario", emp.Usuario);
                 comando.Parameters.AddWithValue("@contrasena", emp.Contrasena);
