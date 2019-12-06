@@ -117,53 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Equipo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Fecha_llegada.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ApellidoP.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Problema.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ApellidoM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Costo_reparacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="NumTelefono.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Fecha_solucion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnRegistrar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHwAAAAmCAYAAAAGC/8vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGhSURBVHhe7dutTgNBFIZhLhGDQCEwCBQCwxVguAEMAoMg
-        BAh/CQQEIIDQkIakhE7ZP/Y2hnzT7KbTPQVk55xPPEnFoebt7k47w0Jd157sYHBjGNwYBjeGwY1hcGP+
-        Fdz1Kj+4K/3bYe6fd2neoAv6DJ8qsd+kX4O/7uf+cs35o8VPSsT5qgsfgqqQm4rBcUVfb4zEN6Q04EL9
-        eCg7bTvBcXs4XpLfhNLzspdHfaPguLIZWx8838XgvI3rdLYy9KWbCo4FmjRMOtxvZ3FwrO6kQdIBj2pc
-        5SE4vr9JQ6TL+0UxDt4/LcQB0gUr9hCcz28b8INMCI4X0gDpwuDGMLgxDG4MgxvTBsdyXRogXdrg2CGT
-        BkiXNjj2TaUB0gU/sIXgOB1xsiwPkR5f/WocHB53MnGIdLhad/FuWTb4Dvum0jClDTtlzQHHNjhgN0X6
-        A0rb5DGnKDjw1q7L7dYo6tsJDviaxkVc2nAbnz7ACGJwwDP9ZpNn3FI064gyzAzewFK+dyD/xwPNF5xr
-        wMljqWPjz+CkC4Mbw+DGMLgxDG5K7X8A+hDONUlqA+UAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnAgregar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHwAAAAmCAYAAAAGC/8vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG5SURBVHhe7Zq9SgNREIV9RCsbKxsrGysbKx/ByjewEiEI
-        KqggAbERBAsJxsWYKESJifEnukSvnLu7V9fMRsvszDnwQYrJNt/ev70z5RhToXBjoXBjoXBjoXBjoXBj
-        +Zfwfuvd3Z+9usb+oztf75AJA17gpxe9pcaKM1Z4vdJ1ewsNtzl9QUrC7vyVfwmG8WdqMR9ROEb04VJT
-        fCApBxiondogNfqdEeGYHiozdfEhpHzUNh5Ss0lywjGyKVsfWN+z5IRzGtfJ9lzk4ucP7zgIxwZNKiY6
-        OFlte89BOHZ3UiHRAZZqjHIvHOc3qYjo4vb4KRHerPbFAqIL7Ni9cK7fNsAHGS8cP6QCogsKNwaFG4PC
-        jUHhxgjCsV2XCogugnDckEkFRBdBOO5NpQKiC3xg88LRHbE1eykWET28tONEOHK6dicWER0cLF57z0H4
-        oDv096ZSMSk3uCnLGhyDcAS3KdIfSLn52eaUE45watfF0cpNajbJiHAExzRu4soNpvHfDYyIKBzBml5d
-        bokPI5NNUYsyUig8C7by0U7PH9rJZIO+BnQej8ufwhldoXBjoXBjoXBjoXBTce4L2m+qwKCJSEsAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <metadata name="cmsReporte.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>35</value>
   </metadata>
 </root>

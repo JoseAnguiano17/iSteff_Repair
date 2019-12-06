@@ -11,21 +11,22 @@ namespace iS_Repair
 {
     public partial class MainForm : Form
     {
+        Form origen;
         UserControl contActual;
         int xClick = 0, yClick = 0;
 
-        public MainForm()
+        public MainForm(Form origen)
         {
+            this.origen = origen;
             InitializeComponent();
             this.Height = Screen.PrimaryScreen.WorkingArea.Height;
-            SqlConnection con = ConexionBD.ObtenerConexion();
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
             if (MessageUtil.Confirmation("¿Desea cerrar el programa?"))
             {
-                this.Close();
+                origen.Close();
             }
         }
 

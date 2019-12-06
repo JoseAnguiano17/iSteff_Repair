@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using iS_Repair.Clases.DataBase;
 using iS_Repair.Clases.ClasesTablas;
 using iS_Repair.Clases.Utils;
+using iS_Repair.Forms;
 
 namespace iS_Repair.Pestañas
 {
@@ -276,6 +277,28 @@ namespace iS_Repair.Pestañas
                 MessageUtil.Error(ex.Message);
             }
             FiltrarDGV();
+        }
+            
+        private void cmsReporte_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            try
+            {
+                new Reporte((int.Parse(dgvClientes.SelectedRows[0].Cells[0].Value.ToString()))).Show();
+            }
+            catch (SqlException ex)
+            {
+                MessageUtil.Error("Ocurrio un error innesperado.\n" + ex.Message);
+            }
+
+        }
+
+        private void dgvClientes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                dgvClientes[e.ColumnIndex, e.RowIndex].Selected = true;
+                cmsReporte.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
         }
     }
 }

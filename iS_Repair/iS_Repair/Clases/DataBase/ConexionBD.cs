@@ -38,8 +38,8 @@ namespace iS_Repair.Clases.DataBase
         public static List<SqlConnection> ObtenerListaConexiones()
         {
             List<SqlConnection> sqlLista = new List<SqlConnection>();
-            sqlLista.Add(new SqlConnection(CrearCadenaConexion("Maro", "")));
             sqlLista.Add(new SqlConnection(CrearCadenaConexion("ANGUIANO-PC", "SERVER")));
+            sqlLista.Add(new SqlConnection(CrearCadenaConexion("Maro", "")));
             sqlLista.Add(new SqlConnection(CrearCadenaConexion("Anguiano", "")));
             return sqlLista;
         }
@@ -271,7 +271,16 @@ namespace iS_Repair.Clases.DataBase
                 SqlDataReader Telefonos = comando.ExecuteReader();
                 while (Telefonos.Read())
                 {
-                    listaTelefonos.Add(new Telefono(Telefonos.GetInt32(0), Telefonos.GetString(1), Telefonos.GetString(2), Telefonos.GetBoolean(3), Telefonos.GetString(4), Telefonos.GetString(5), char.Parse(Telefonos.GetString(6)), Telefonos.GetDateTime(7), Telefonos.GetInt16(8), Telefonos.GetInt32(9)));
+                    listaTelefonos.Add(new Telefono(Telefonos.GetInt32(0),
+                        Telefonos.GetString(1),
+                        (Telefonos[2] is DBNull) ? null : Telefonos.GetString(2),
+                        Telefonos.GetBoolean(3),
+                        (Telefonos[4] is DBNull) ? null : Telefonos.GetString(4),
+                        (Telefonos[5] is DBNull) ? null : Telefonos.GetString(5),
+                        char.Parse(Telefonos.GetString(6)),
+                        Telefonos.GetDateTime(7),
+                        Telefonos.GetInt16(8),
+                        Telefonos.GetInt32(9)));
                 }
                 Telefonos.Close();
                 con.Close();
@@ -352,7 +361,7 @@ namespace iS_Repair.Clases.DataBase
 
         public static Empleado DetectarAdmin()
         {
-            Empleado empleado = new Empleado();
+            Empleado empleado = null;
             using (SqlConnection con = ObtenerConexion())
             {
                 SqlCommand comando = new SqlCommand("SELECT * FROM EMPLEADO WHERE ADMINISTRADOR = 1", con);
@@ -362,13 +371,14 @@ namespace iS_Repair.Clases.DataBase
                     empleado = new Empleado(sqlEmpleado.GetString(0), sqlEmpleado.GetString(1), sqlEmpleado.GetString(2), sqlEmpleado.GetString(3), sqlEmpleado.GetString(4), sqlEmpleado.GetString(5), sqlEmpleado.GetString(6), sqlEmpleado.GetString(7), sqlEmpleado.GetBoolean(8));
                 }
                 sqlEmpleado.Close();
+                con.Close();
             }
             return empleado;
         }
 
         public static Empleado DetectarEmpleado(string strUsuario, string strContrasena)
         {
-            Empleado empleado = new Empleado();
+            Empleado empleado = null;
             using (SqlConnection con = ObtenerConexion())
             {
                 SqlCommand comando = new SqlCommand("SELECT * FROM EMPLEADO WHERE USUARIO = '" + strUsuario + "' AND CONTRASENA = '" + strContrasena + "'", con);
