@@ -92,7 +92,7 @@ namespace iS_Repair.Clases.DataBase
                 SqlDataReader Empleados = comando.ExecuteReader();
                 while (Empleados.Read())
                 {
-                    listaEmpleados.Add(new Empleado(Empleados.GetString(0), Empleados.GetString(1), Empleados.GetString(2), Empleados.GetString(3), Empleados.GetString(4), Empleados.GetString(5), Empleados.GetString(6), Empleados.GetString(7), Empleados.GetBoolean(8)));
+                    listaEmpleados.Add(new Empleado(Empleados.GetString(0), Empleados.GetString(1), Empleados.GetString(2), Empleados.GetString(3), Empleados.GetString(4), Empleados.GetString(5), Empleados.GetString(6), Empleados.GetString(7)));
                 }
                 Empleados.Close();
             }
@@ -106,7 +106,7 @@ namespace iS_Repair.Clases.DataBase
                 SqlCommand comando = new SqlCommand("INSERT INTO EMPLEADO (USUARIO, CONTRASENA, NOMBRE, APELLIDOP" +
                                                     " APELLIDOM, NUMTELEFONO, CORREO, DIRECCION)" +
                                          " VALUES (@usuario, @contrasena, @nombre, @apellidoP, @apellidom, @numtelefono" +
-                                         " @correo, @direccion, @administrador)", con);
+                                         " @correo, @direccion)", con);
                 comando.Parameters.AddWithValue("@usuario", emp.Usuario);
                 comando.Parameters.AddWithValue("@contrasena", emp.Contrasena);
                 comando.Parameters.AddWithValue("@nombre", emp.Nombre);
@@ -115,7 +115,6 @@ namespace iS_Repair.Clases.DataBase
                 comando.Parameters.AddWithValue("@numtelefono", emp.Telefono);
                 comando.Parameters.AddWithValue("@correo", emp.Correo);
                 comando.Parameters.AddWithValue("@direccion", emp.Direccion);
-                comando.Parameters.AddWithValue("@administrador", emp.Administrador);
                 comando.ExecuteNonQuery();
             }
         }
@@ -333,38 +332,6 @@ namespace iS_Repair.Clases.DataBase
                 intValor.Close();
             }
             return intID;
-        }
-
-        public static Empleado DetectarAdmin()
-        {
-            Empleado empleado = new Empleado();
-            using (SqlConnection con = ObtenerConexion())
-            {
-                SqlCommand comando = new SqlCommand("SELECT * FROM EMPLEADO WHERE ADMINISTRADOR = 1", con);
-                SqlDataReader sqlEmpleado = comando.ExecuteReader();
-                while (sqlEmpleado.Read())
-                {
-                    empleado = new Empleado(sqlEmpleado.GetString(0), sqlEmpleado.GetString(1), sqlEmpleado.GetString(2), sqlEmpleado.GetString(3), sqlEmpleado.GetString(4), sqlEmpleado.GetString(5), sqlEmpleado.GetString(6), sqlEmpleado.GetString(7), sqlEmpleado.GetBoolean(8));
-                }
-                sqlEmpleado.Close();
-            }
-            return empleado;
-        }
-
-        public static Empleado DetectarEmpleado(string strUsuario, string strContrasena)
-        {
-            Empleado empleado = new Empleado();
-            using (SqlConnection con = ObtenerConexion())
-            {
-                SqlCommand comando = new SqlCommand("SELECT * FROM EMPLEADO WHERE USUARIO = '"+strUsuario+"' AND CONTRASENA = '"+strContrasena+"'", con);
-                SqlDataReader sqlEmpleado = comando.ExecuteReader();
-                while (sqlEmpleado.Read())
-                {
-                    empleado = new Empleado(sqlEmpleado.GetString(0), sqlEmpleado.GetString(1), sqlEmpleado.GetString(2), sqlEmpleado.GetString(3), sqlEmpleado.GetString(4), sqlEmpleado.GetString(5), sqlEmpleado.GetString(6), sqlEmpleado.GetString(7), sqlEmpleado.GetBoolean(8));
-                }
-                sqlEmpleado.Close();
-            }
-            return empleado;
         }
     }
 }

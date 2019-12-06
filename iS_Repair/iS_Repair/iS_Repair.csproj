@@ -78,12 +78,6 @@
     <Compile Include="Clases\ClasesTablas\Telefono.cs" />
     <Compile Include="Clases\ClasesTablas\Telprob.cs" />
     <Compile Include="Clases\DataBase\ConexionBD.cs" />
-    <Compile Include="Pestañas\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pestañas\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="Clases\Utils\Archivo.cs" />
     <Compile Include="Clases\Utils\CustomArchive.cs" />
     <Compile Include="Clases\Utils\MessageUtil.cs" />
@@ -134,9 +128,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pestañas\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pestañas\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pestañas\Pedidos.resx">
       <DependentUpon>Pedidos.cs</DependentUpon>
