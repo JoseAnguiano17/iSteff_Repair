@@ -271,16 +271,17 @@ namespace iS_Repair.Clases.DataBase
                 SqlDataReader Telefonos = comando.ExecuteReader();
                 while (Telefonos.Read())
                 {
-                    listaTelefonos.Add(new Telefono(Telefonos.GetInt32(0),
-                        Telefonos.GetString(1),
-                        (Telefonos[2] is DBNull) ? null : Telefonos.GetString(2),
-                        Telefonos.GetBoolean(3),
-                        (Telefonos[4] is DBNull) ? null : Telefonos.GetString(4),
-                        (Telefonos[5] is DBNull) ? null : Telefonos.GetString(5),
-                        char.Parse(Telefonos.GetString(6)),
-                        Telefonos.GetDateTime(7),
-                        Telefonos.GetInt16(8),
-                        Telefonos.GetInt32(9)));
+                    int a = Telefonos.GetInt32(0);
+                    string b = Telefonos.GetString(1);
+                    string c = Telefonos.GetString(2);
+                    bool d = Telefonos.GetBoolean(3);
+                    string e = Telefonos.GetString(4);
+                    string f = Telefonos.GetString(5);
+                    char g = char.Parse(Telefonos.GetString(6));
+                    DateTime h = Telefonos.GetDateTime(7);
+                    short i = Telefonos.GetByte(8);
+                    int j = Telefonos.GetInt32(9);
+                    listaTelefonos.Add(new Telefono(a,b,c,d,e,f,g,h,(short)i,j));
                 }
                 Telefonos.Close();
                 con.Close();
@@ -390,6 +391,16 @@ namespace iS_Repair.Clases.DataBase
                 sqlEmpleado.Close();
             }
             return empleado;
+        }
+
+        public static void MarcarComoPedido(int intIdPedido)
+        {
+            using (SqlConnection con = ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("exec REALIZAR_PEDIDO "+intIdPedido, con);
+                comando.ExecuteNonQuery();
+                con.Close();
+            }
         }
     }
 }

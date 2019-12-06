@@ -28,8 +28,8 @@ namespace iS_Repair.Pestañas
             foreach (Telefono telf in ConexionBD.CargarTelefonos())
             {
                 dgvTelefonos.Rows.Add(telf.ID, telf.Modelo, (telf.Armado) ? "Sí" : "No", (telf.Rango == 1) ? "Baja prioridad" : (telf.Rango == 2) ? "Media prioridad" : "Alta prioridad", telf.IDEstado);
-                dgvTelefonos[i,3].Style.BackColor = (telf.Rango == 1) ? Color.LightSeaGreen : (telf.Rango == 2) ? Color.LightSteelBlue: Color.IndianRed;
-                    i++;
+                dgvTelefonos[3,i].Style.BackColor = (telf.Rango == 1) ? Color.LightSeaGreen : (telf.Rango == 2) ? Color.LightSteelBlue: Color.IndianRed;
+                i++;
             }
         }
     }

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -53,9 +54,9 @@ namespace iS_Repair.Forms
                     ConexionBD.InsertarEmpleado(emp=new Empleado(txtUsuario.Text, txtContrasena.Text, "Admin", " ", " ", " ", "reparacionesisteff@gmail.com", "Morelos #610 Col Centro Nuevo Laredo", true));
                     IniciarSistema(emp);
                 }
-                catch (Exception x)
+                catch (SqlException x)
                 {
-                    MessageBox.Show(x.Message);
+                    MessageUtil.Error(x.Message);
                 }
             }
             else

@@ -278,8 +278,17 @@ namespace iS_Repair.Pestañas
             }
             FiltrarDGV();
         }
-            
-        private void cmsReporte_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+
+        private void dgvClientes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                dgvClientes[e.ColumnIndex, e.RowIndex].Selected = true;
+                cmsReporte.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -290,15 +299,6 @@ namespace iS_Repair.Pestañas
                 MessageUtil.Error("Ocurrio un error innesperado.\n" + ex.Message);
             }
 
-        }
-
-        private void dgvClientes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Right)
-            {
-                dgvClientes[e.ColumnIndex, e.RowIndex].Selected = true;
-                cmsReporte.Show(Cursor.Position.X, Cursor.Position.Y);
-            }
         }
     }
 }

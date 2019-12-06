@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnQuit = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblID = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,18 +43,16 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnQuit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.dgvTelefonos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Problema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Costo_reparacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_solucion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvTelefonos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnQuit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +72,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(959, 511);
             this.panel1.TabIndex = 57;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnQuit);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(921, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(36, 134);
+            this.panel2.TabIndex = 66;
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnQuit.Image = global::iS_Repair.Properties.Resources.remove;
+            this.btnQuit.ImageActive = null;
+            this.btnQuit.Location = new System.Drawing.Point(1, 4);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(10);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(36, 26);
+            this.btnQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnQuit.TabIndex = 57;
+            this.btnQuit.TabStop = false;
+            this.btnQuit.Zoom = 10;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click_1);
             // 
             // bunifuCustomLabel5
             // 
@@ -162,21 +186,72 @@
             this.txtNombre.Size = new System.Drawing.Size(176, 25);
             this.txtNombre.TabIndex = 60;
             // 
-            // btnQuit
+            // dgvTelefonos
             // 
-            this.btnQuit.BackColor = System.Drawing.SystemColors.Control;
-            this.btnQuit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuit.Image = global::iS_Repair.Properties.Resources.remove;
-            this.btnQuit.ImageActive = null;
-            this.btnQuit.Location = new System.Drawing.Point(0, 0);
-            this.btnQuit.Margin = new System.Windows.Forms.Padding(10);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(36, 26);
-            this.btnQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnQuit.TabIndex = 57;
-            this.btnQuit.TabStop = false;
-            this.btnQuit.Zoom = 10;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click_1);
+            this.dgvTelefonos.AllowUserToAddRows = false;
+            this.dgvTelefonos.AllowUserToDeleteRows = false;
+            this.dgvTelefonos.AllowUserToResizeColumns = false;
+            this.dgvTelefonos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dgvTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTelefonos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTelefonos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTelefonos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTelefonos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTelefonos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTelefonos.ColumnHeadersHeight = 30;
+            this.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Equipo,
+            this.Fecha_llegada,
+            this.Problema,
+            this.Costo_reparacion,
+            this.Fecha_solucion});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTelefonos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTelefonos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTelefonos.DoubleBuffered = true;
+            this.dgvTelefonos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvTelefonos.EnableHeadersVisualStyles = false;
+            this.dgvTelefonos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.dgvTelefonos.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
+            this.dgvTelefonos.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvTelefonos.Location = new System.Drawing.Point(0, 134);
+            this.dgvTelefonos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvTelefonos.MultiSelect = false;
+            this.dgvTelefonos.Name = "dgvTelefonos";
+            this.dgvTelefonos.ReadOnly = true;
+            this.dgvTelefonos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTelefonos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTelefonos.RowHeadersVisible = false;
+            this.dgvTelefonos.RowHeadersWidth = 60;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTelefonos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTelefonos.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTelefonos.RowTemplate.Height = 30;
+            this.dgvTelefonos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTelefonos.Size = new System.Drawing.Size(957, 375);
+            this.dgvTelefonos.TabIndex = 58;
             // 
             // Equipo
             // 
@@ -208,82 +283,6 @@
             this.Fecha_solucion.Name = "Fecha_solucion";
             this.Fecha_solucion.ReadOnly = true;
             // 
-            // dgvTelefonos
-            // 
-            this.dgvTelefonos.AllowUserToAddRows = false;
-            this.dgvTelefonos.AllowUserToDeleteRows = false;
-            this.dgvTelefonos.AllowUserToResizeColumns = false;
-            this.dgvTelefonos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dgvTelefonos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvTelefonos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTelefonos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTelefonos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTelefonos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTelefonos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvTelefonos.ColumnHeadersHeight = 30;
-            this.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvTelefonos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Equipo,
-            this.Fecha_llegada,
-            this.Problema,
-            this.Costo_reparacion,
-            this.Fecha_solucion});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTelefonos.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvTelefonos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvTelefonos.DoubleBuffered = true;
-            this.dgvTelefonos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvTelefonos.EnableHeadersVisualStyles = false;
-            this.dgvTelefonos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.dgvTelefonos.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(30)))), ((int)(((byte)(219)))));
-            this.dgvTelefonos.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvTelefonos.Location = new System.Drawing.Point(0, 134);
-            this.dgvTelefonos.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvTelefonos.MultiSelect = false;
-            this.dgvTelefonos.Name = "dgvTelefonos";
-            this.dgvTelefonos.ReadOnly = true;
-            this.dgvTelefonos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTelefonos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvTelefonos.RowHeadersVisible = false;
-            this.dgvTelefonos.RowHeadersWidth = 60;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTelefonos.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvTelefonos.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTelefonos.RowTemplate.Height = 30;
-            this.dgvTelefonos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTelefonos.Size = new System.Drawing.Size(957, 375);
-            this.dgvTelefonos.TabIndex = 58;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnQuit);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(921, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(36, 134);
-            this.panel2.TabIndex = 66;
-            // 
             // Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,9 +296,9 @@
             this.Deactivate += new System.EventHandler(this.Reporte_Deactivate);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnQuit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
